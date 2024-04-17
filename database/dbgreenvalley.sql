@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2016 at 07:32 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Apr 17, 2024 at 04:51 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -34,25 +35,27 @@ CREATE TABLE `course` (
   `COURSE_DESC` varchar(255) NOT NULL,
   `DEPT_ID` int(11) NOT NULL,
   `SETSEMESTER` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `course`
 --
 
 INSERT INTO `course` (`COURSE_ID`, `COURSE_NAME`, `COURSE_LEVEL`, `COURSE_MAJOR`, `COURSE_DESC`, `DEPT_ID`, `SETSEMESTER`) VALUES
-(21, 'BSBA Financial Management', '1', 'Financial', 'Bachelor of Science in Busines Administration ', 34, ''),
-(30, 'BSED Major in English', '1', 'English', 'Bachelor of Secondary Education (BSED)', 35, ''),
-(31, 'BSED Major in English', '2', 'English', 'Bachelor of Secondary Education (BSED)', 35, ''),
-(32, 'BSED Major in English', '3', 'English', 'Bachelor of Secondary Education (BSED)', 35, ''),
-(33, 'BSED Major in English', '4', 'English', 'Bachelor of Secondary Education (BSED)', 35, ''),
-(42, 'BEED General', '1', 'General', 'Bachelor of Elementary Education (BEED)', 35, ''),
-(43, 'BEED General', '2', 'General', 'Bachelor of Elementary Education (BEED)', 35, ''),
-(44, 'BEED General', '3', 'General', 'Bachelor of Elementary Education (BEED)', 35, ''),
-(45, 'BEED General', '4', 'General', 'Bachelor of Elementary Education (BEED)', 35, ''),
-(57, 'BSBA Financial Management', '2', 'Financial', 'Bachelor of Science in Busines Administration', 34, ''),
-(58, 'BSBA Financial Management', '3', 'Financial', 'Bachelor of Science in Busines Administration', 34, ''),
-(59, 'BSBA Financial Management', '4', 'Financial', 'Bachelor of Science in Busines Administration', 34, '');
+(21, 'BSCS', '1', 'Computer Science', 'Bachelor of Science in Computer Science', 33, ''),
+(30, 'BSAIS', '1', 'Accounting', 'Bachelor of Science in Accounting Information System', 35, ''),
+(31, 'BSAIS', '2', 'Accounting', 'Bachelor of Science in Accounting Information System', 35, ''),
+(32, 'BSAIS', '3', 'Accounting', 'Bachelor of Science in Accounting Information System', 35, ''),
+(33, 'BSAIS', '4', 'Accounting', 'Bachelor of Science in Accounting Information System', 35, ''),
+(42, 'BSE', '1', 'Business Fundamentals', 'Bachelor of Science in Entrepreneurship', 34, ''),
+(43, 'BSE', '2', 'Business Fundamentals', 'Bachelor of Science in Entrepreneurship', 34, ''),
+(44, 'BSE', '3', 'Business Fundamentals', 'Bachelor of Science in Entrepreneurship', 34, ''),
+(45, 'BSE', '4', 'Business Fundamentals', 'Bachelor of Science in Entrepreneurship', 34, ''),
+(57, 'BSCS', '2', 'Computer Science', 'Bachelor of Science in Computer Science', 33, ''),
+(58, 'BSCS', '3', 'Computer Science', 'Bachelor of Science in Computer Science', 33, ''),
+(59, 'BSCS', '4', 'Computer Science', 'Bachelor of Science in Computer Science', 33, ''),
+(60, 'ACT', '1', 'Computer Technology', 'Associate in Computer Technology', 37, ''),
+(61, 'ACT', '2', 'Computer Technology', 'Associate in Computer Technology', 37, '');
 
 -- --------------------------------------------------------
 
@@ -64,16 +67,17 @@ CREATE TABLE `department` (
   `DEPT_ID` int(11) NOT NULL,
   `DEPARTMENT_NAME` varchar(30) NOT NULL,
   `DEPARTMENT_DESC` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `department`
 --
 
 INSERT INTO `department` (`DEPT_ID`, `DEPARTMENT_NAME`, `DEPARTMENT_DESC`) VALUES
-(33, 'IT', 'Information Technology Department'),
-(34, 'BITE', 'Business and IT Education'),
-(35, 'TEA', 'Teacher Education Department');
+(33, 'BSCS', 'Bachelor of Science in Computer Science'),
+(34, 'BSE', 'Bachelor of Science in Entrepreneurship'),
+(35, 'BSAIS', 'Bachelor of Science in Accounting Information Syst'),
+(37, 'ACT', 'Associate in Computer Technology (2 years)        ');
 
 -- --------------------------------------------------------
 
@@ -93,7 +97,7 @@ CREATE TABLE `grades` (
   `REMARKS` text NOT NULL,
   `COMMENT` text NOT NULL,
   `SEMS` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `grades`
@@ -543,7 +547,98 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `FIRST`, `SECOND`, `THIRD`,
 (1503, 1000000156, 83, 0, 0, 0, 0, 0, '', '', ''),
 (1504, 1000000156, 84, 0, 0, 0, 0, 0, '', '', ''),
 (1505, 1000000156, 85, 0, 0, 0, 0, 0, '', '', ''),
-(1506, 1000000156, 86, 0, 0, 0, 0, 0, '', '', '');
+(1506, 1000000156, 86, 0, 0, 0, 0, 0, '', '', ''),
+(1507, 100000080, 146, 0, 0, 0, 0, 0, '', '', ''),
+(1508, 100000080, 147, 0, 0, 0, 0, 0, '', '', ''),
+(1509, 100000080, 148, 0, 0, 0, 0, 0, '', '', ''),
+(1510, 100000080, 149, 0, 0, 0, 0, 0, '', '', ''),
+(1511, 100000080, 150, 0, 0, 0, 0, 0, '', '', ''),
+(1512, 100000080, 151, 0, 0, 0, 0, 0, '', '', ''),
+(1513, 100000080, 152, 0, 0, 0, 0, 0, '', '', ''),
+(1514, 100000080, 153, 0, 0, 0, 0, 0, '', '', ''),
+(1515, 100000080, 154, 0, 0, 0, 0, 0, '', '', ''),
+(1516, 100000083, 206, 0, 0, 0, 0, 0, '', '', ''),
+(1517, 100000083, 207, 0, 0, 0, 0, 0, '', '', ''),
+(1518, 100000083, 208, 0, 0, 0, 0, 0, '', '', ''),
+(1519, 100000083, 209, 0, 0, 0, 0, 0, '', '', ''),
+(1520, 100000083, 210, 0, 0, 0, 0, 0, '', '', ''),
+(1521, 100000083, 211, 0, 0, 0, 0, 0, '', '', ''),
+(1522, 100000083, 212, 0, 0, 0, 0, 0, '', '', ''),
+(1523, 100000083, 213, 0, 0, 0, 0, 0, '', '', ''),
+(1524, 1000000202, 246, 0, 0, 0, 0, 0, '', '', ''),
+(1525, 1000000202, 247, 0, 0, 0, 0, 0, '', '', ''),
+(1526, 1000000202, 248, 0, 0, 0, 0, 0, '', '', ''),
+(1527, 1000000202, 249, 0, 0, 0, 0, 0, '', '', ''),
+(1528, 1000000202, 250, 0, 0, 0, 0, 0, '', '', ''),
+(1529, 1000000202, 251, 0, 0, 0, 0, 0, '', '', ''),
+(1530, 100000084, 146, 0, 0, 0, 0, 0, '', '', ''),
+(1531, 100000084, 147, 0, 0, 0, 0, 0, '', '', ''),
+(1532, 100000084, 148, 0, 0, 0, 0, 0, '', '', ''),
+(1533, 100000084, 149, 0, 0, 0, 0, 0, '', '', ''),
+(1534, 100000084, 150, 0, 0, 0, 0, 0, '', '', ''),
+(1535, 100000084, 151, 0, 0, 0, 0, 0, '', '', ''),
+(1536, 100000084, 152, 0, 0, 0, 0, 0, '', '', ''),
+(1537, 100000084, 153, 0, 0, 0, 0, 0, '', '', ''),
+(1538, 100000084, 154, 0, 0, 0, 0, 0, '', '', ''),
+(1539, 100000085, 146, 0, 0, 0, 0, 0, '', '', ''),
+(1540, 100000085, 147, 0, 0, 0, 0, 0, '', '', ''),
+(1541, 100000085, 148, 0, 0, 0, 0, 0, '', '', ''),
+(1542, 100000085, 149, 0, 0, 0, 0, 0, '', '', ''),
+(1543, 100000085, 150, 0, 0, 0, 0, 0, '', '', ''),
+(1544, 100000085, 151, 0, 0, 0, 0, 0, '', '', ''),
+(1545, 100000085, 152, 0, 0, 0, 0, 0, '', '', ''),
+(1546, 100000085, 153, 0, 0, 0, 0, 0, '', '', ''),
+(1547, 100000085, 154, 0, 0, 0, 0, 0, '', '', ''),
+(1548, 100000086, 206, 0, 0, 0, 0, 0, '', '', ''),
+(1549, 100000086, 207, 0, 0, 0, 0, 0, '', '', ''),
+(1550, 100000086, 208, 0, 0, 0, 0, 0, '', '', ''),
+(1551, 100000086, 209, 0, 0, 0, 0, 0, '', '', ''),
+(1552, 100000086, 210, 0, 0, 0, 0, 0, '', '', ''),
+(1553, 100000086, 211, 0, 0, 0, 0, 0, '', '', ''),
+(1554, 100000086, 212, 0, 0, 0, 0, 0, '', '', ''),
+(1555, 100000086, 213, 0, 0, 0, 0, 0, '', '', ''),
+(1556, 100000087, 146, 0, 0, 0, 0, 0, '', '', ''),
+(1557, 100000087, 147, 0, 0, 0, 0, 0, '', '', ''),
+(1558, 100000087, 148, 0, 0, 0, 0, 0, '', '', ''),
+(1559, 100000087, 149, 0, 0, 0, 0, 0, '', '', ''),
+(1560, 100000087, 150, 0, 0, 0, 0, 0, '', '', ''),
+(1561, 100000087, 151, 0, 0, 0, 0, 0, '', '', ''),
+(1562, 100000087, 152, 0, 0, 0, 0, 0, '', '', ''),
+(1563, 100000087, 153, 0, 0, 0, 0, 0, '', '', ''),
+(1564, 100000087, 154, 0, 0, 0, 0, 0, '', '', ''),
+(1565, 1000000203, 206, 90, 99, 99, 99, 97.2, 'Passed', '', ''),
+(1566, 1000000203, 207, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1567, 1000000203, 208, 100, 100, 99, 99, 99.4, 'Passed', '', ''),
+(1568, 1000000203, 209, 60, 99, 99, 99, 91.2, 'Passed', '', ''),
+(1569, 1000000203, 210, 100, 100, 100, 100, 100, 'Passed', '', ''),
+(1570, 1000000203, 211, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1571, 1000000203, 212, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1572, 1000000203, 213, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1573, 1000000204, 206, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1574, 1000000204, 207, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1575, 1000000204, 208, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1576, 1000000204, 209, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1577, 1000000204, 210, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1578, 1000000204, 211, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1579, 1000000204, 212, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1580, 1000000204, 213, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1581, 1000000205, 304, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1582, 1000000205, 305, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1583, 1000000205, 306, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1584, 1000000205, 307, 88, 88, 98, 98, 94, 'Passed', '', ''),
+(1585, 1000000205, 308, 89, 99, 99, 99, 97, 'Passed', '', ''),
+(1586, 1000000205, 309, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1587, 1000000205, 310, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1588, 1000000205, 311, 89, 99, 99, 99, 97, 'Passed', '', ''),
+(1589, 1000000206, 135, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1590, 1000000206, 136, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1591, 1000000206, 137, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1592, 1000000206, 138, 99, 99, 9, 99, 81, 'Passed', '', ''),
+(1593, 1000000206, 139, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1594, 1000000206, 140, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1595, 1000000206, 141, 99, 99, 99, 99, 99, 'Passed', '', ''),
+(1596, 1000000206, 142, 99, 99, 89, 98, 96.6, 'Passed', '', ''),
+(1597, 1000000206, 143, 99, 99, 99, 99, 99, 'Passed', '', '');
 
 -- --------------------------------------------------------
 
@@ -561,62 +656,7 @@ CREATE TABLE `schoolyr` (
   `DATE_RESERVED` datetime NOT NULL,
   `DATE_ENROLLED` datetime NOT NULL,
   `STATUS` varchar(30) NOT NULL DEFAULT 'New'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `schoolyr`
---
-
-INSERT INTO `schoolyr` (`SYID`, `AY`, `SEMESTER`, `COURSE_ID`, `IDNO`, `CATEGORY`, `DATE_RESERVED`, `DATE_ENROLLED`, `STATUS`) VALUES
-(150, '2016-2017', 'First', 30, 100000076, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(151, '2016-2017', 'First', 30, 100000077, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(152, '2016-2017', 'First', 42, 100000079, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(153, '2016-2017', 'First', 21, 1000000100, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(154, '2016-2017', 'First', 30, 100000092, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(155, '2016-2017', 'First', 30, 1000000126, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(156, '2016-2017', 'First', 30, 1000000127, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(157, '2016-2017', 'First', 42, 1000000190, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(158, '2016-2017', 'First', 42, 1000000201, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(159, '2016-2017', 'First', 42, 1000000200, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(160, '2016-2017', 'First', 42, 1000000199, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(161, '2016-2017', 'First', 42, 1000000198, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(162, '2016-2017', 'First', 42, 1000000197, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(163, '2016-2017', 'First', 42, 1000000196, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(164, '2016-2017', 'First', 42, 1000000195, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(165, '2016-2017', 'First', 42, 1000000194, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(166, '2016-2017', 'First', 42, 1000000193, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(167, '2016-2017', 'First', 42, 1000000192, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(168, '2016-2017', 'First', 42, 1000000191, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(169, '2016-2017', 'First', 42, 1000000189, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(170, '2016-2017', 'First', 42, 1000000188, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(171, '2016-2017', 'First', 42, 1000000187, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(172, '2016-2017', 'First', 42, 1000000186, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(173, '2016-2017', 'First', 42, 1000000185, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(174, '2016-2017', 'First', 42, 1000000184, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(175, '2016-2017', 'First', 42, 1000000183, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(176, '2016-2017', 'First', 42, 1000000182, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(177, '2016-2017', 'First', 42, 1000000181, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(178, '2016-2017', 'First', 42, 1000000180, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(179, '2016-2017', 'First', 42, 1000000179, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(180, '2016-2017', 'First', 42, 1000000178, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(181, '2016-2017', 'First', 42, 1000000177, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(182, '2016-2017', 'First', 42, 1000000176, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(183, '2016-2017', 'First', 42, 1000000175, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(184, '2016-2017', 'First', 42, 1000000174, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(185, '2016-2017', 'First', 42, 1000000173, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(186, '2016-2017', 'First', 42, 1000000172, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(187, '2016-2017', 'First', 42, 1000000171, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(188, '2016-2017', 'First', 42, 1000000170, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(189, '2016-2017', 'First', 42, 1000000169, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(190, '2016-2017', 'First', 42, 1000000168, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(191, '2016-2017', 'First', 42, 1000000167, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(192, '2016-2017', 'First', 42, 1000000166, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(193, '2016-2017', 'First', 42, 1000000165, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(194, '2016-2017', 'First', 42, 1000000164, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(195, '2016-2017', 'First', 42, 1000000163, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(196, '2016-2017', 'First', 21, 1000000162, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(197, '2016-2017', 'First', 42, 100000098, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New'),
-(198, '2016-2017', 'First', 42, 1000000156, 'ENROLLED', '2016-10-07 00:00:00', '2016-10-07 00:00:00', 'New');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -636,7 +676,7 @@ CREATE TABLE `studentschedule` (
   `CSECTION` varchar(30) NOT NULL DEFAULT 'NONE',
   `COURSE_ID` int(11) NOT NULL,
   `SEMESTER` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -654,7 +694,7 @@ CREATE TABLE `studentsubjects` (
   `ATTEMP` int(11) NOT NULL,
   `AVERAGE` double NOT NULL,
   `OUTCOME` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `studentsubjects`
@@ -1104,7 +1144,98 @@ INSERT INTO `studentsubjects` (`STUDSUBJ_ID`, `IDNO`, `SUBJ_ID`, `LEVEL`, `SEMES
 (1497, 1000000156, 83, 1, 'First', '2016-2017', 1, 0, ''),
 (1498, 1000000156, 84, 1, 'First', '2016-2017', 1, 0, ''),
 (1499, 1000000156, 85, 1, 'First', '2016-2017', 1, 0, ''),
-(1500, 1000000156, 86, 1, 'First', '2016-2017', 1, 0, '');
+(1500, 1000000156, 86, 1, 'First', '2016-2017', 1, 0, ''),
+(1501, 100000080, 146, 1, 'Second', '2024-2025', 1, 0, ''),
+(1502, 100000080, 147, 1, 'Second', '2024-2025', 1, 0, ''),
+(1503, 100000080, 148, 1, 'Second', '2024-2025', 1, 0, ''),
+(1504, 100000080, 149, 1, 'Second', '2024-2025', 1, 0, ''),
+(1505, 100000080, 150, 1, 'Second', '2024-2025', 1, 0, ''),
+(1506, 100000080, 151, 1, 'Second', '2024-2025', 1, 0, ''),
+(1507, 100000080, 152, 1, 'Second', '2024-2025', 1, 0, ''),
+(1508, 100000080, 153, 1, 'Second', '2024-2025', 1, 0, ''),
+(1509, 100000080, 154, 1, 'Second', '2024-2025', 1, 0, ''),
+(1510, 100000083, 206, 1, 'Second', '2024-2025', 1, 0, ''),
+(1511, 100000083, 207, 1, 'Second', '2024-2025', 1, 0, ''),
+(1512, 100000083, 208, 1, 'Second', '2024-2025', 1, 0, ''),
+(1513, 100000083, 209, 1, 'Second', '2024-2025', 1, 0, ''),
+(1514, 100000083, 210, 1, 'Second', '2024-2025', 1, 0, ''),
+(1515, 100000083, 211, 1, 'Second', '2024-2025', 1, 0, ''),
+(1516, 100000083, 212, 1, 'Second', '2024-2025', 1, 0, ''),
+(1517, 100000083, 213, 1, 'Second', '2024-2025', 1, 0, ''),
+(1518, 1000000202, 246, 1, 'Second', '2024-2025', 1, 0, ''),
+(1519, 1000000202, 247, 1, 'Second', '2024-2025', 1, 0, ''),
+(1520, 1000000202, 248, 1, 'Second', '2024-2025', 1, 0, ''),
+(1521, 1000000202, 249, 1, 'Second', '2024-2025', 1, 0, ''),
+(1522, 1000000202, 250, 1, 'Second', '2024-2025', 1, 0, ''),
+(1523, 1000000202, 251, 1, 'Second', '2024-2025', 1, 0, ''),
+(1524, 100000084, 146, 1, 'Second', '2024-2025', 1, 0, ''),
+(1525, 100000084, 147, 1, 'Second', '2024-2025', 1, 0, ''),
+(1526, 100000084, 148, 1, 'Second', '2024-2025', 1, 0, ''),
+(1527, 100000084, 149, 1, 'Second', '2024-2025', 1, 0, ''),
+(1528, 100000084, 150, 1, 'Second', '2024-2025', 1, 0, ''),
+(1529, 100000084, 151, 1, 'Second', '2024-2025', 1, 0, ''),
+(1530, 100000084, 152, 1, 'Second', '2024-2025', 1, 0, ''),
+(1531, 100000084, 153, 1, 'Second', '2024-2025', 1, 0, ''),
+(1532, 100000084, 154, 1, 'Second', '2024-2025', 1, 0, ''),
+(1533, 100000085, 146, 1, 'Second', '2024-2025', 1, 0, ''),
+(1534, 100000085, 147, 1, 'Second', '2024-2025', 1, 0, ''),
+(1535, 100000085, 148, 1, 'Second', '2024-2025', 1, 0, ''),
+(1536, 100000085, 149, 1, 'Second', '2024-2025', 1, 0, ''),
+(1537, 100000085, 150, 1, 'Second', '2024-2025', 1, 0, ''),
+(1538, 100000085, 151, 1, 'Second', '2024-2025', 1, 0, ''),
+(1539, 100000085, 152, 1, 'Second', '2024-2025', 1, 0, ''),
+(1540, 100000085, 153, 1, 'Second', '2024-2025', 1, 0, ''),
+(1541, 100000085, 154, 1, 'Second', '2024-2025', 1, 0, ''),
+(1542, 100000086, 206, 1, 'Second', '2024-2025', 1, 0, ''),
+(1543, 100000086, 207, 1, 'Second', '2024-2025', 1, 0, ''),
+(1544, 100000086, 208, 1, 'Second', '2024-2025', 1, 0, ''),
+(1545, 100000086, 209, 1, 'Second', '2024-2025', 1, 0, ''),
+(1546, 100000086, 210, 1, 'Second', '2024-2025', 1, 0, ''),
+(1547, 100000086, 211, 1, 'Second', '2024-2025', 1, 0, ''),
+(1548, 100000086, 212, 1, 'Second', '2024-2025', 1, 0, ''),
+(1549, 100000086, 213, 1, 'Second', '2024-2025', 1, 0, ''),
+(1550, 100000087, 146, 1, 'Second', '2024-2025', 1, 0, ''),
+(1551, 100000087, 147, 1, 'Second', '2024-2025', 1, 0, ''),
+(1552, 100000087, 148, 1, 'Second', '2024-2025', 1, 0, ''),
+(1553, 100000087, 149, 1, 'Second', '2024-2025', 1, 0, ''),
+(1554, 100000087, 150, 1, 'Second', '2024-2025', 1, 0, ''),
+(1555, 100000087, 151, 1, 'Second', '2024-2025', 1, 0, ''),
+(1556, 100000087, 152, 1, 'Second', '2024-2025', 1, 0, ''),
+(1557, 100000087, 153, 1, 'Second', '2024-2025', 1, 0, ''),
+(1558, 100000087, 154, 1, 'Second', '2024-2025', 1, 0, ''),
+(1559, 1000000203, 206, 1, 'Second', '2024-2025', 1, 97.2, 'Passed'),
+(1560, 1000000203, 207, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1561, 1000000203, 208, 1, 'Second', '2024-2025', 1, 99.4, 'Passed'),
+(1562, 1000000203, 209, 1, 'Second', '2024-2025', 1, 91.2, 'Passed'),
+(1563, 1000000203, 210, 1, 'Second', '2024-2025', 1, 100, 'Passed'),
+(1564, 1000000203, 211, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1565, 1000000203, 212, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1566, 1000000203, 213, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1567, 1000000204, 206, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1568, 1000000204, 207, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1569, 1000000204, 208, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1570, 1000000204, 209, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1571, 1000000204, 210, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1572, 1000000204, 211, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1573, 1000000204, 212, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1574, 1000000204, 213, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1575, 1000000205, 304, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1576, 1000000205, 305, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1577, 1000000205, 306, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1578, 1000000205, 307, 1, 'Second', '2024-2025', 1, 94, 'Passed'),
+(1579, 1000000205, 308, 1, 'Second', '2024-2025', 1, 97, 'Passed'),
+(1580, 1000000205, 309, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1581, 1000000205, 310, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1582, 1000000205, 311, 1, 'Second', '2024-2025', 1, 97, 'Passed'),
+(1583, 1000000206, 135, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1584, 1000000206, 136, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1585, 1000000206, 137, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1586, 1000000206, 138, 1, 'Second', '2024-2025', 1, 81, 'Passed'),
+(1587, 1000000206, 139, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1588, 1000000206, 140, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1589, 1000000206, 141, 1, 'Second', '2024-2025', 1, 99, 'Passed'),
+(1590, 1000000206, 142, 1, 'Second', '2024-2025', 1, 96.6, 'Passed'),
+(1591, 1000000206, 143, 1, 'Second', '2024-2025', 1, 99, 'Passed');
 
 -- --------------------------------------------------------
 
@@ -1122,7 +1253,7 @@ CREATE TABLE `subject` (
   `AY` varchar(30) NOT NULL,
   `SEMESTER` varchar(20) NOT NULL,
   `PreTaken` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `subject`
@@ -1171,7 +1302,7 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (52, 'SocSci 132', 'Rizal & other heroes ', 3, 'NONE', 31, '', 'First', 0),
 (53, 'Ed 211', 'Child & adolescent Psychology', 3, 'Psyh 116', 31, '', 'First', 0),
 (54, 'Ed 212', 'Education Technology 1', 3, 'NONE', 31, '', 'First', 0),
-(55, 'FS 1', 'Observation of learners Dev''t & the school enviroment  ', 3, 'NONE', 31, '', 'First', 0),
+(55, 'FS 1', 'Observation of learners Dev\'t & the school enviroment  ', 3, 'NONE', 31, '', 'First', 0),
 (56, 'Eng 212', 'The Teaching Of speaking ', 3, 'NONE ', 31, '', 'First', 0),
 (57, 'Eng 213', 'The teaching of lsting & Rdg.', 2, 'NONE', 31, '', 'First', 0),
 (58, 'PE 211', 'Team sports', 2, 'PE 121 ', 31, '', 'First', 0),
@@ -1202,14 +1333,14 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (83, 'Read 1', 'Dev. Reading 1', 3, 'None', 42, '', 'First', 0),
 (84, 'Psych 116', 'General Psycology', 3, 'None', 42, '', 'First', 0),
 (85, 'PE 111', 'Physical Fitness', 2, 'None', 42, '', 'First', 0),
-(86, 'NSTP 111', 'Nat''l Service Trng. Prog. 1', 3, 'None', 42, '', 'First', 0),
+(86, 'NSTP 111', 'Nat\'l Service Trng. Prog. 1', 3, 'None', 42, '', 'First', 0),
 (87, 'Eng 211', 'Speech and Oral Communication', 3, 'Eng 121', 43, '', 'First', 0),
 (88, 'Fil 211', 'Masining na Pagpapahayag', 3, 'Fil 121', 43, '', 'First', 0),
 (89, 'Lit 121', 'World Literature', 3, 'Lit 111', 43, '', 'First', 0),
 (90, 'SocSci 132', 'Rizal and Other Heroes', 3, 'None', 43, '', 'First', 0),
 (91, 'Ed 211', 'Child Psycology', 3, 'Psych 116', 43, '', 'First', 0),
 (92, 'Ed 212', 'Educational Technology 1', 3, 'None', 43, '', 'First', 0),
-(93, 'FS 1', 'Observation of Learning Dev''t and the School Environment', 1, 'None', 43, '', 'First', 0),
+(93, 'FS 1', 'Observation of Learning Dev\'t and the School Environment', 1, 'None', 43, '', 'First', 0),
 (94, 'Eng 212', 'The Teaching of Speaking', 3, 'Eng 121', 43, '', 'First', 0),
 (95, 'Math 3', 'Elem. Theory of Numbers', 3, 'Math 2', 43, '', 'First', 0),
 (96, 'PE 211', 'Team Sports', 2, 'PE 121', 43, '', 'First', 0),
@@ -1237,8 +1368,8 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (118, 'Ed 322', 'Assessment of Study Lrng.', 3, 'Ed 312', 44, '', 'Second', 0),
 (119, 'Ed 323', 'Environment Educ.', 1, 'None', 44, '', 'Second', 0),
 (120, 'FS 4', 'Team Teaching: Exploring the Curr.', 1, 'FS 3', 44, '', 'Second', 0),
-(121, 'Lit 321', 'Children''s Literature', 3, 'None', 44, '', 'Second', 0),
-(122, 'Eng 321', 'Remedial Inst''n in Eng', 3, 'None', 44, '', 'Second', 0),
+(121, 'Lit 321', 'Children\'s Literature', 3, 'None', 44, '', 'Second', 0),
+(122, 'Eng 321', 'Remedial Inst\'n in Eng', 3, 'None', 44, '', 'Second', 0),
 (123, 'Hum 111', 'Intro. to Humanities', 3, 'None', 44, '', 'Second', 0),
 (124, 'Econ 110', 'Prin. of Econ/AgRfm Tax and Coop', 3, 'None', 44, '', 'Second', 0),
 (125, 'Phys 1', 'Fundamental of Physics', 3, 'None', 44, '', 'Second', 0),
@@ -1259,7 +1390,7 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (140, 'Lit 111', 'Philippine Literature', 3, 'None', 42, '', 'Second', 0),
 (141, 'Read 2', 'Development Rdg. 2', 3, 'Read 1', 42, '', 'Second', 0),
 (142, 'PE 121', 'Rhythmic Activities', 2, 'PE 111', 42, '', 'Second', 0),
-(143, 'NSTP 121', 'Nat''l Service Trang. Prog. 2', 3, 'NSTP 111', 42, '', 'Second', 0),
+(143, 'NSTP 121', 'Nat\'l Service Trang. Prog. 2', 3, 'NSTP 111', 42, '', 'Second', 0),
 (144, 'Eng 411', 'Lang. and Lit, Assessmet', 3, 'None', 45, '', 'First', 0),
 (146, 'Eng 121', 'Writing in Disc.', 3, 'Eng 111', 30, '', 'Second', 0),
 (147, 'Fil 121', 'Pagbasa at Pagsulat', 3, 'Fil 111', 30, '', 'Second', 0),
@@ -1269,7 +1400,7 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (151, 'CS 113', 'Basic Software Pkge. w/ Internet Application', 3, 'None', 30, '', 'Second', 0),
 (152, 'Socio 115', 'Culture, Soc. and Fam w/ ARH', 3, 'None', 30, '', 'Second', 0),
 (153, 'PE 121', 'Rhythmic Activities', 2, 'PE 111', 30, '', 'Second', 0),
-(154, 'NSTP 121', 'Nat''l. Service Trng. Prog. 2', 3, 'NSTP 111', 30, '', 'Second', 0),
+(154, 'NSTP 121', 'Nat\'l. Service Trng. Prog. 2', 3, 'NSTP 111', 30, '', 'Second', 0),
 (155, 'Ed 221', 'Facilitating Learning', 3, 'Ed 211', 31, '', 'Second', 0),
 (156, 'Ed 222', 'Educational Technology 2', 3, 'Ed 212', 31, '', 'Second', 0),
 (157, 'Ed 223', 'Curriculum Development', 3, 'None', 31, '', 'Second', 0),
@@ -1285,7 +1416,7 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (167, 'FS 4', 'Team Tchng: Exploring the Curr.', 1, 'FS 3', 32, '', 'Second', 0),
 (168, 'Ed 321', 'Social Dimension of Educ. ', 3, 'Ed 311', 32, '', 'Second', 0),
 (169, 'Ed 323', 'Environment Educ.', 1, 'None', 32, '', 'Second', 0),
-(170, 'Eng 321', 'Remedial Instr''n in Eng', 3, 'None', 32, '', 'Second', 0),
+(170, 'Eng 321', 'Remedial Instr\'n in Eng', 3, 'None', 32, '', 'Second', 0),
 (171, 'Eng 323', 'Structure of English', 3, 'None', 32, '', 'Second', 0),
 (172, 'Eng 324', 'Mythology and Folklore', 3, '3', 32, '', 'Second', 0),
 (173, 'Eng 325', 'Eng for Specific Purpose', 3, 'None', 32, '', 'Second', 0),
@@ -1303,14 +1434,14 @@ INSERT INTO `subject` (`SUBJ_ID`, `SUBJ_CODE`, `SUBJ_DESCRIPTION`, `UNIT`, `PRE_
 (185, 'Psycho 111', 'General Psychology', 3, 'None', 57, '', 'First', 0),
 (186, 'Math 117', 'Calculus for Business', 3, 'math 111', 57, '', 'First', 0),
 (187, 'Acctg 211', 'Financial Acctg & Reporting ', 3, 'Acctg 202', 57, '', 'First', 0),
-(188, 'Hist 111', 'Phil History w/ politics and gov''t', 3, 'None', 57, '', 'First', 0),
+(188, 'Hist 111', 'Phil History w/ politics and gov\'t', 3, 'None', 57, '', 'First', 0),
 (189, 'Eng 113', 'Speech and oral com.', 3, 'Eng 112', 57, '', 'First', 0),
 (190, 'PE 113', 'Team Sports ', 2, 'PE 111', 57, '', 'First', 0),
 (191, 'Eng 114', 'Technical writng ', 3, 'Eng 113', 58, '', 'First', 0),
 (192, 'Mgt 211', 'Human Behavior in Organization ', 3, 'Mgt 111', 58, '', 'First', 0),
 (193, 'Cost 211', 'Cost Acctg & Cost Mgt. 1', 3, 'Acctg 212', 58, '', 'First', 0),
 (194, 'Econ 114', 'MicroEconomic theory & Prac.', 3, 'Econ 112', 58, '', 'First', 0),
-(195, 'CS 212', 'Funfd. of info. sys. Dev''t', 3, 'CS 211', 58, '', 'First', 0),
+(195, 'CS 212', 'Funfd. of info. sys. Dev\'t', 3, 'CS 211', 58, '', 'First', 0),
 (196, 'Law 211', 'law on Obiligation & contracts', 3, 'None', 58, '', 'First', 0),
 (197, 'Pol Sci 211', 'Good Governance & Social Resp', 3, 'Hist 111', 58, '', 'First', 0),
 (198, 'Math 211', 'Quantitative Techniques in Business', 3, 'Stat 113', 58, '', 'First', 0),
@@ -1435,10 +1566,10 @@ CREATE TABLE `tblauto` (
   `autocode` varchar(255) DEFAULT NULL,
   `autoname` varchar(255) DEFAULT NULL,
   `appendchar` varchar(255) DEFAULT NULL,
-  `autostart` int(11) DEFAULT '0',
-  `autoend` int(11) DEFAULT '0',
+  `autostart` int(11) DEFAULT 0,
+  `autoend` int(11) DEFAULT 0,
   `incrementvalue` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tblauto`
@@ -1447,7 +1578,7 @@ CREATE TABLE `tblauto` (
 INSERT INTO `tblauto` (`ID`, `autocode`, `autoname`, `appendchar`, `autostart`, `autoend`, `incrementvalue`) VALUES
 (1, 'Asset', 'Asset', 'ASitem', 0, 3, 1),
 (2, 'Trans', 'Transaction', 'TrAnS', 1, 5, 1),
-(3, 'SIDNO', 'IDNO', '2015', 1000000, 202, 1),
+(3, 'SIDNO', 'IDNO', '2015', 1000000, 207, 1),
 (4, 'EMPLOYEE', 'EMPID', '020010', 0, 2, 1);
 
 -- --------------------------------------------------------
@@ -1461,45 +1592,7 @@ CREATE TABLE `tblinstructor` (
   `INST_NAME` varchar(90) NOT NULL,
   `INST_MAJOR` varchar(90) NOT NULL,
   `INST_CONTACT` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblinstructor`
---
-
-INSERT INTO `tblinstructor` (`INST_ID`, `INST_NAME`, `INST_MAJOR`, `INST_CONTACT`) VALUES
-(1, 'Joker Villanueva', 'Programming', '091873648495'),
-(2, 'Melanie M. Katigbak', 'English', '09801127665'),
-(3, 'Kenneth John L. Mayo', 'IT', '09097767654'),
-(4, 'Cliff A. Belano', 'Physics', '09347787366'),
-(5, 'Heidi U. Ignacio', 'Accounting', '09127767746'),
-(6, 'Lorelie B. Bustos', 'Mathematics', '09127738774'),
-(7, 'Jenard G. Ticong', 'Physical Education', '09127786774'),
-(8, 'Gina D. Parilla', 'English', '09887764746'),
-(9, 'Fernando R. Reyes', 'Mathematics', '09127787654'),
-(10, 'Virgil K. Delatin', 'IT', '09127787664'),
-(11, 'Lovelyn A. Durano', 'Filipino', '09667877637'),
-(12, 'Ramon Alamda', 'Mathematics', '09275663345'),
-(13, 'Richard Alamada', 'Psycology', '09264566789'),
-(14, 'Daemon Gomez', 'Economics', '09098756443'),
-(15, 'Noemi Mangelen', 'History', '09265644765'),
-(16, 'Kenneth Almazan', 'Marketing', '09254566451'),
-(17, 'Rene Alabra', 'Philosophy', '09256744585'),
-(18, 'Regine Razor', 'Literature', '09267544673'),
-(19, 'Shai Regardos', 'Nat Sci', '09265473223'),
-(20, 'Hana James', 'Law', '09287656778'),
-(21, 'Amy Musali', 'Political Science', '09098756772'),
-(22, 'Fhai Kilosyo', 'Business Enterprenuership', '09278744678'),
-(23, 'Kim Fajardo', 'Social Science', '09275644563'),
-(24, 'Hana Hugo', 'English', '09098767445'),
-(25, 'Johari Samadalan', 'Biology', '09254675334'),
-(26, 'Kinohi Arakashi', 'General Science', '09256734876'),
-(27, 'Sharmine Hidalgo', 'Filipino', '09264734621'),
-(28, 'Tantan Exiomo', 'English', '09253234532'),
-(29, 'Gerald Bustos', 'Humanities', '09284537593'),
-(30, 'Kay Abad', 'Financial Management', '09287635452'),
-(31, 'Recardo Piang', 'English', '09264537432'),
-(32, 'Edgard Sumayaw', 'Physical Education', '09276438532');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -1513,316 +1606,14 @@ CREATE TABLE `tbllogs` (
   `LOGDATETIME` datetime NOT NULL,
   `LOGROLE` varchar(55) NOT NULL,
   `LOGMODE` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbllogs`
 --
 
 INSERT INTO `tbllogs` (`LOGID`, `USERID`, `LOGDATETIME`, `LOGROLE`, `LOGMODE`) VALUES
-(1, 1, '2016-09-22 21:46:01', 'Administrator', 'Logged in'),
-(2, 100000022, '2016-09-22 21:46:29', 'Student', 'Logged out'),
-(3, 100000015, '2016-09-23 05:00:38', 'Student', 'Logged in'),
-(4, 100000015, '2016-09-23 05:00:45', 'Student', 'Logged out'),
-(5, 100000025, '2016-09-23 05:02:31', 'Student', 'Logged in'),
-(6, 100000025, '2016-09-23 05:02:55', 'Student', 'Logged out'),
-(7, 100000025, '2016-09-23 05:03:53', 'Student', 'Logged in'),
-(8, 100000025, '2016-09-23 05:11:40', 'Student', 'Logged out'),
-(44, 1, '2016-09-28 15:59:30', 'Administrator', 'Logged in'),
-(45, 100000071, '2016-09-28 16:03:54', 'Student', 'Logged in'),
-(46, 100000071, '2016-09-28 16:08:44', 'Student', 'Logged out'),
-(47, 1, '2016-09-28 16:35:55', 'Administrator', 'Logged out'),
-(48, 1, '2016-09-28 16:36:01', 'Administrator', 'Logged in'),
-(49, 1, '2016-09-28 16:37:41', 'Administrator', 'Logged out'),
-(50, 2, '2016-09-28 16:37:46', 'Registrar', 'Logged in'),
-(51, 2, '2016-09-28 16:37:53', 'Registrar', 'Logged in'),
-(52, 2, '2016-09-28 16:38:00', 'Registrar', 'Logged in'),
-(53, 1, '2016-09-28 16:38:05', 'Administrator', 'Logged in'),
-(54, 1, '2016-09-28 16:38:19', 'Administrator', 'Logged out'),
-(55, 2, '2016-09-28 16:38:25', 'Registrar', 'Logged in'),
-(56, 2, '2016-09-28 16:38:34', 'Registrar', 'Logged in'),
-(57, 1, '2016-09-28 16:38:44', 'Administrator', 'Logged in'),
-(58, 1, '2016-09-28 17:11:31', 'Administrator', 'Logged in'),
-(59, 1, '2016-09-28 17:12:57', 'Administrator', 'Logged out'),
-(60, 2, '2016-09-28 17:13:03', 'Registrar', 'Logged in'),
-(61, 2, '2016-09-28 17:13:22', 'Registrar', 'Logged out'),
-(62, 1, '2016-09-28 17:16:24', 'Administrator', 'Logged in'),
-(63, 100000073, '2016-09-29 00:09:36', 'Student', 'Logged out'),
-(64, 100000076, '2016-09-29 02:28:04', 'Student', 'Logged out'),
-(65, 2, '2016-09-29 03:16:04', 'Registrar', 'Logged in'),
-(66, 2, '2016-09-29 03:59:22', 'Registrar', 'Logged in'),
-(67, 2, '2016-09-29 04:48:52', 'Registrar', 'Logged in'),
-(68, 100000079, '2016-09-29 04:49:11', 'Student', 'Logged out'),
-(69, 100000080, '2016-09-29 04:53:17', 'Student', 'Logged out'),
-(70, 100000073, '2016-09-29 04:53:53', 'Student', 'Logged in'),
-(71, 2, '2016-09-29 05:29:19', 'Registrar', 'Logged in'),
-(72, 2, '2016-09-29 05:29:32', 'Registrar', 'Logged out'),
-(73, 1, '2016-09-29 05:29:42', 'Administrator', 'Logged in'),
-(74, 100000073, '2016-09-29 05:30:16', 'Student', 'Logged out'),
-(75, 100000080, '2016-09-29 05:30:25', 'Student', 'Logged in'),
-(76, 1, '2016-09-29 07:19:58', 'Administrator', 'Logged in'),
-(77, 2, '2016-09-29 08:48:03', 'Registrar', 'Logged in'),
-(78, 2, '2016-09-29 08:49:03', 'Registrar', 'Logged out'),
-(79, 1, '2016-09-29 08:49:32', 'Administrator', 'Logged in'),
-(80, 100000081, '2016-09-29 08:53:32', 'Student', 'Logged out'),
-(81, 100000079, '2016-09-29 08:53:55', 'Student', 'Logged in'),
-(82, 100000079, '2016-09-29 10:15:53', 'Student', 'Logged out'),
-(83, 100000083, '2016-09-29 10:20:12', 'Student', 'Logged out'),
-(84, 100000084, '2016-09-29 10:23:29', 'Student', 'Logged out'),
-(85, 100000085, '2016-09-29 10:28:26', 'Student', 'Logged out'),
-(86, 100000086, '2016-09-29 10:31:39', 'Student', 'Logged out'),
-(87, 100000087, '2016-09-29 10:35:43', 'Student', 'Logged out'),
-(88, 100000086, '2016-09-29 10:35:51', 'Student', 'Logged in'),
-(89, 100000086, '2016-09-29 10:40:03', 'Student', 'Logged out'),
-(90, 100000073, '2016-09-29 10:40:10', 'Student', 'Logged in'),
-(91, 100000073, '2016-09-29 10:40:41', 'Student', 'Logged out'),
-(92, 100000081, '2016-09-29 10:43:26', 'Student', 'Logged in'),
-(93, 100000081, '2016-09-29 10:46:48', 'Student', 'Logged out'),
-(94, 1, '2016-09-29 10:47:56', 'Administrator', 'Logged out'),
-(95, 2, '2016-09-29 10:48:02', 'Registrar', 'Logged in'),
-(96, 2, '2016-09-29 10:48:22', 'Registrar', 'Logged out'),
-(97, 1, '2016-09-29 10:48:29', 'Administrator', 'Logged in'),
-(98, 100000088, '2016-09-29 10:50:11', 'Student', 'Logged out'),
-(99, 100000073, '2016-09-29 10:50:18', 'Student', 'Logged in'),
-(100, 100000073, '2016-09-29 11:01:04', 'Student', 'Logged out'),
-(101, 100000090, '2016-09-29 11:02:07', 'Student', 'Logged out'),
-(102, 100000091, '2016-09-29 11:06:07', 'Student', 'Logged out'),
-(103, 100000086, '2016-09-29 11:06:17', 'Student', 'Logged in'),
-(104, 100000086, '2016-09-29 11:06:53', 'Student', 'Logged out'),
-(105, 100000073, '2016-09-29 11:07:02', 'Student', 'Logged in'),
-(106, 100000073, '2016-09-29 11:07:20', 'Student', 'Logged out'),
-(107, 100000092, '2016-09-29 11:30:44', 'Student', 'Logged out'),
-(108, 100000093, '2016-09-29 11:34:39', 'Student', 'Logged out'),
-(109, 100000073, '2016-09-29 11:36:12', 'Student', 'Logged in'),
-(110, 100000073, '2016-09-29 11:36:17', 'Student', 'Logged out'),
-(111, 100000094, '2016-09-29 11:37:59', 'Student', 'Logged out'),
-(112, 100000094, '2016-09-29 11:38:09', 'Student', 'Logged in'),
-(113, 100000094, '2016-09-29 11:40:37', 'Student', 'Logged out'),
-(114, 100000095, '2016-09-29 11:42:30', 'Student', 'Logged out'),
-(115, 100000096, '2016-09-29 11:44:16', 'Student', 'Logged out'),
-(116, 100000097, '2016-09-29 11:46:46', 'Student', 'Logged out'),
-(117, 100000098, '2016-09-29 11:57:01', 'Student', 'Logged out'),
-(118, 100000099, '2016-09-29 11:58:45', 'Student', 'Logged out'),
-(119, 100000099, '2016-09-29 11:58:52', 'Student', 'Logged in'),
-(120, 100000099, '2016-09-29 11:58:58', 'Student', 'Logged out'),
-(121, 1000000100, '2016-09-29 12:01:01', 'Student', 'Logged out'),
-(122, 1000000101, '2016-09-29 12:02:54', 'Student', 'Logged out'),
-(123, 1000000102, '2016-09-29 12:04:18', 'Student', 'Logged out'),
-(124, 1000000103, '2016-09-29 12:07:27', 'Student', 'Logged out'),
-(125, 1000000104, '2016-09-29 12:08:50', 'Student', 'Logged out'),
-(126, 1000000105, '2016-09-29 12:10:44', 'Student', 'Logged out'),
-(127, 1000000106, '2016-09-29 12:13:13', 'Student', 'Logged out'),
-(128, 1000000107, '2016-09-29 12:14:57', 'Student', 'Logged out'),
-(129, 1000000108, '2016-09-29 12:16:53', 'Student', 'Logged out'),
-(130, 1, '2016-09-29 16:37:39', 'Administrator', 'Logged in'),
-(131, 1, '2016-09-29 16:38:17', 'Administrator', 'Logged out'),
-(132, 1, '2016-09-29 16:38:21', 'Administrator', 'Logged in'),
-(133, 1, '2016-09-29 16:39:19', 'Administrator', 'Logged out'),
-(134, 1, '2016-09-29 16:39:23', 'Administrator', 'Logged in'),
-(135, 1000000109, '2016-09-29 16:49:15', 'Student', 'Logged out'),
-(136, 100000073, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(137, 100000073, '2016-09-29 17:07:59', 'Student', 'Logged out'),
-(138, 100000073, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(139, 1, '2016-09-29 17:53:03', 'Administrator', 'Logged in'),
-(140, 100000073, '2016-09-29 18:09:53', 'Student', 'Logged out'),
-(141, 1000000110, '2016-09-29 18:15:25', 'Student', 'Logged out'),
-(142, 1000000111, '2016-09-29 18:19:26', 'Student', 'Logged out'),
-(143, 1000000112, '2016-09-29 18:22:58', 'Student', 'Logged out'),
-(144, 1000000113, '2016-09-29 18:25:01', 'Student', 'Logged out'),
-(145, 1000000114, '2016-09-29 18:26:55', 'Student', 'Logged out'),
-(146, 1000000115, '2016-09-29 18:28:09', 'Student', 'Logged out'),
-(147, 1000000116, '2016-09-29 18:29:09', 'Student', 'Logged out'),
-(148, 1000000117, '2016-09-29 18:31:08', 'Student', 'Logged out'),
-(149, 1000000118, '2016-09-29 18:32:45', 'Student', 'Logged out'),
-(150, 1000000119, '2016-09-29 18:34:05', 'Student', 'Logged out'),
-(151, 1000000120, '2016-09-29 18:43:34', 'Student', 'Logged out'),
-(152, 1000000121, '2016-09-29 18:44:47', 'Student', 'Logged out'),
-(153, 1000000122, '2016-09-29 18:45:53', 'Student', 'Logged out'),
-(154, 1000000123, '2016-09-29 18:50:13', 'Student', 'Logged out'),
-(155, 1000000124, '2016-09-29 18:51:24', 'Student', 'Logged out'),
-(156, 1000000125, '2016-09-29 18:52:34', 'Student', 'Logged out'),
-(157, 1000000126, '2016-09-29 18:53:39', 'Student', 'Logged out'),
-(158, 1000000120, '2016-09-29 18:53:49', 'Student', 'Logged in'),
-(159, 1000000120, '2016-09-29 18:54:03', 'Student', 'Logged out'),
-(160, 1000000127, '2016-09-29 18:55:34', 'Student', 'Logged out'),
-(161, 1000000128, '2016-09-29 18:56:39', 'Student', 'Logged out'),
-(162, 1000000129, '2016-09-29 18:57:42', 'Student', 'Logged out'),
-(163, 1000000130, '2016-09-29 18:59:04', 'Student', 'Logged out'),
-(164, 1, '2016-09-29 19:07:28', 'Administrator', 'Logged in'),
-(165, 1000000121, '2016-09-29 19:07:43', 'Student', 'Logged in'),
-(166, 1000000121, '2016-09-29 19:07:50', 'Student', 'Logged out'),
-(167, 1000000131, '2016-09-29 19:08:04', 'Student', 'Logged in'),
-(168, 1000000131, '2016-09-29 19:08:39', 'Student', 'Logged out'),
-(169, 1000000121, '2016-09-29 19:14:18', 'Student', 'Logged in'),
-(170, 1000000121, '2016-09-29 19:15:12', 'Student', 'Logged out'),
-(171, 1000000132, '2016-09-29 19:17:36', 'Student', 'Logged out'),
-(172, 1, '2016-09-29 23:50:06', 'Administrator', 'Logged in'),
-(173, 1, '2016-09-29 23:54:23', 'Administrator', 'Logged in'),
-(174, 1000000133, '2016-09-30 01:34:28', 'Student', 'Logged out'),
-(175, 1000000134, '2016-09-30 01:38:26', 'Student', 'Logged out'),
-(176, 1000000135, '2016-09-30 01:44:48', 'Student', 'Logged out'),
-(177, 1, '2016-09-30 01:46:34', 'Administrator', 'Logged in'),
-(178, 1, '2016-09-30 02:42:22', 'Administrator', 'Logged in'),
-(179, 1000000136, '2016-09-30 02:50:21', 'Student', 'Logged out'),
-(180, 1000000137, '2016-09-30 03:23:48', 'Student', 'Logged out'),
-(181, 100000073, '2016-09-30 03:23:57', 'Student', 'Logged in'),
-(182, 1, '2016-10-03 00:58:29', 'Administrator', 'Logged in'),
-(183, 1, '2016-10-04 09:59:35', 'Administrator', 'Logged in'),
-(184, 100000087, '2016-10-04 10:05:41', 'Student', 'Logged in'),
-(185, 100000087, '2016-10-04 10:09:59', 'Student', 'Logged out'),
-(186, 1000000139, '2016-10-04 10:43:22', 'Student', 'Logged out'),
-(187, 1, '2016-10-04 14:20:22', 'Administrator', 'Logged in'),
-(188, 1, '2016-10-04 23:35:32', 'Administrator', 'Logged in'),
-(189, 1000000116, '2016-10-05 01:21:09', 'Student', 'Logged in'),
-(190, 1, '2016-10-05 01:34:20', 'Administrator', 'Logged in'),
-(191, 1000000116, '2016-10-05 02:30:47', 'Student', 'Logged out'),
-(192, 1000000133, '2016-10-05 02:30:55', 'Student', 'Logged in'),
-(193, 1, '2016-10-05 02:59:26', 'Administrator', 'Logged in'),
-(194, 1000000133, '2016-10-05 03:36:18', 'Student', 'Logged in'),
-(195, 1000000133, '2016-10-05 03:49:32', 'Student', 'Logged out'),
-(196, 1000000140, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(197, 1000000140, '2016-10-05 06:50:22', 'Student', 'Logged out'),
-(198, 100000077, '2016-10-05 06:50:30', 'Student', 'Logged in'),
-(199, 100000077, '2016-10-05 06:51:25', 'Student', 'Logged out'),
-(200, 1000000140, '2016-10-05 06:51:33', 'Student', 'Logged in'),
-(201, 1000000140, '2016-10-05 06:52:38', 'Student', 'Logged out'),
-(202, 1000000140, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(203, 1000000140, '2016-10-05 06:53:27', 'Student', 'Logged out'),
-(204, 100000077, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(205, 100000077, '2016-10-05 06:59:20', 'Student', 'Logged out'),
-(206, 1000000140, '2016-10-05 06:59:49', 'Student', 'Logged in'),
-(207, 1000000140, '2016-10-05 07:02:13', 'Student', 'Logged out'),
-(208, 1, '2016-10-05 08:55:14', 'Administrator', 'Logged in'),
-(209, 1000000121, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(210, 1000000121, '2016-10-05 09:28:07', 'Student', 'Logged out'),
-(211, 1000000140, '2016-10-05 09:28:13', 'Student', 'Logged in'),
-(212, 1000000142, '2016-10-06 08:40:16', 'Student', 'Logged out'),
-(213, 1, '2016-10-06 08:44:09', 'Administrator', 'Logged in'),
-(214, 1000000143, '2016-10-06 08:44:29', 'Student', 'Logged out'),
-(215, 1000000144, '2016-10-06 08:48:51', 'Student', 'Logged out'),
-(216, 1000000144, '2016-10-06 08:49:01', 'Student', 'Logged in'),
-(217, 1000000144, '2016-10-06 08:49:10', 'Student', 'Logged out'),
-(218, 1000000145, '2016-10-06 08:57:58', 'Student', 'Logged out'),
-(219, 100000073, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(220, 100000073, '2016-10-06 09:05:17', 'Student', 'Logged out'),
-(221, 100000086, '2016-10-06 09:07:20', 'Student', 'Logged in'),
-(222, 100000086, '2016-10-06 09:08:00', 'Student', 'Logged out'),
-(223, 100000096, '2016-10-06 09:08:37', 'Student', 'Logged in'),
-(224, 100000096, '2016-10-06 09:26:06', 'Student', 'Logged out'),
-(225, 100000096, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(226, 100000096, '2016-10-06 09:26:27', 'Student', 'Logged out'),
-(227, 100000096, '2016-10-06 09:26:33', 'Student', 'Logged in'),
-(228, 1, '2016-10-06 14:03:43', 'Administrator', 'Logged in'),
-(229, 1000000146, '2016-10-06 14:16:14', 'Student', 'Logged out'),
-(230, 100000073, '2016-10-06 14:16:25', 'Student', 'Logged in'),
-(231, 1, '2016-10-06 14:16:41', 'Administrator', 'Logged in'),
-(232, 100000073, '2016-10-06 14:45:24', 'Student', 'Logged out'),
-(233, 100000073, '2016-10-06 14:49:12', 'Student', 'Logged in'),
-(234, 100000073, '2016-10-06 15:20:54', 'Student', 'Logged out'),
-(235, 100000096, '2016-10-06 15:21:07', 'Student', 'Logged in'),
-(236, 100000096, '2016-10-06 15:29:37', 'Student', 'Logged out'),
-(237, 100000096, '2016-10-06 15:29:57', 'Student', 'Logged in'),
-(238, 100000096, '2016-10-06 15:31:13', 'Student', 'Logged out'),
-(239, 100000096, '2016-10-06 15:50:34', 'Student', 'Logged in'),
-(240, 1, '2016-10-07 00:26:28', 'Administrator', 'Logged in'),
-(241, 1, '2016-10-07 01:09:04', 'Administrator', 'Logged in'),
-(242, 100000073, '2016-10-07 01:17:39', 'Student', 'Logged in'),
-(243, 100000073, '2016-10-07 01:20:53', 'Student', 'Logged out'),
-(244, 1000000148, '2016-10-07 01:24:45', 'Student', 'Logged out'),
-(245, 1000000149, '2016-10-07 01:40:59', 'Student', 'Logged out'),
-(246, 100000096, '2016-10-07 01:41:53', 'Student', 'Logged in'),
-(247, 100000096, '2016-10-07 02:24:12', 'Student', 'Logged out'),
-(248, 1000000149, '2016-10-07 02:24:17', 'Student', 'Logged in'),
-(249, 1000000149, '2016-10-07 06:27:56', 'Student', 'Logged out'),
-(250, 1000000152, '2016-10-07 06:32:26', 'Student', 'Logged out'),
-(251, 1000000153, '2016-10-07 06:34:59', 'Student', 'Logged out'),
-(252, 1000000154, '2016-10-07 06:37:58', 'Student', 'Logged out'),
-(253, 1000000155, '2016-10-07 06:39:39', 'Student', 'Logged out'),
-(254, 1000000156, '2016-10-07 06:41:05', 'Student', 'Logged out'),
-(255, 1000000157, '2016-10-07 06:44:26', 'Student', 'Logged out'),
-(256, 1000000158, '2016-10-07 06:46:32', 'Student', 'Logged out'),
-(257, 1000000159, '2016-10-07 06:48:24', 'Student', 'Logged out'),
-(258, 1000000160, '2016-10-07 06:50:16', 'Student', 'Logged out'),
-(259, 1000000161, '2016-10-07 07:14:03', 'Student', 'Logged out'),
-(260, 1000000162, '2016-10-07 07:16:34', 'Student', 'Logged out'),
-(261, 1000000140, '2016-10-07 07:16:48', 'Student', 'Logged in'),
-(262, 1000000140, '2016-10-07 07:30:19', 'Student', 'Logged out'),
-(263, 1000000140, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(264, 1000000140, '2016-10-07 07:31:20', 'Student', 'Logged out'),
-(265, 1000000161, '2016-10-07 07:31:28', 'Student', 'Logged in'),
-(266, 1000000161, '2016-10-07 07:42:46', 'Student', 'Logged out'),
-(267, 1000000161, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(268, 1000000163, '2016-10-07 13:17:15', 'Student', 'Logged out'),
-(269, 1000000164, '2016-10-07 13:20:44', 'Student', 'Logged out'),
-(270, 1000000165, '2016-10-07 13:26:27', 'Student', 'Logged out'),
-(271, 1000000166, '2016-10-07 13:30:09', 'Student', 'Logged out'),
-(272, 1000000167, '2016-10-07 13:34:10', 'Student', 'Logged out'),
-(273, 1000000168, '2016-10-07 13:37:31', 'Student', 'Logged out'),
-(274, 1000000169, '2016-10-07 13:40:41', 'Student', 'Logged out'),
-(275, 1000000170, '2016-10-07 13:42:53', 'Student', 'Logged out'),
-(276, 1000000171, '2016-10-07 13:48:06', 'Student', 'Logged out'),
-(277, 1000000172, '2016-10-07 13:50:37', 'Student', 'Logged out'),
-(278, 1000000173, '2016-10-07 13:55:45', 'Student', 'Logged out'),
-(279, 1000000174, '2016-10-07 14:01:20', 'Student', 'Logged out'),
-(280, 1000000175, '2016-10-07 14:04:13', 'Student', 'Logged out'),
-(281, 1000000176, '2016-10-07 14:06:41', 'Student', 'Logged out'),
-(282, 1000000177, '2016-10-07 14:12:44', 'Student', 'Logged out'),
-(283, 1, '2016-10-07 14:12:57', 'Administrator', 'Logged in'),
-(284, 1000000140, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(285, 1000000140, '2016-10-07 14:17:04', 'Student', 'Logged out'),
-(286, 1000000178, '2016-10-07 14:24:09', 'Student', 'Logged out'),
-(287, 1000000179, '2016-10-07 14:28:17', 'Student', 'Logged out'),
-(288, 1000000180, '2016-10-07 14:32:34', 'Student', 'Logged out'),
-(289, 1000000181, '2016-10-07 14:34:47', 'Student', 'Logged out'),
-(290, 1000000182, '2016-10-07 14:56:22', 'Student', 'Logged out'),
-(291, 1000000140, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(292, 1000000140, '2016-10-07 15:01:26', 'Student', 'Logged out'),
-(293, 1000000183, '2016-10-07 15:03:38', 'Student', 'Logged out'),
-(294, 1000000184, '2016-10-07 15:07:07', 'Student', 'Logged out'),
-(295, 1000000185, '2016-10-07 15:16:27', 'Student', 'Logged out'),
-(296, 1000000186, '2016-10-07 15:18:29', 'Student', 'Logged out'),
-(297, 1000000187, '2016-10-07 15:19:53', 'Student', 'Logged out'),
-(298, 1000000188, '2016-10-07 15:21:13', 'Student', 'Logged out'),
-(299, 1000000189, '2016-10-07 15:22:55', 'Student', 'Logged out'),
-(300, 1000000190, '2016-10-07 15:24:47', 'Student', 'Logged out'),
-(301, 1000000191, '2016-10-07 15:26:21', 'Student', 'Logged out'),
-(302, 1000000192, '2016-10-07 15:28:19', 'Student', 'Logged out'),
-(303, 1000000193, '2016-10-07 15:29:59', 'Student', 'Logged out'),
-(304, 1000000194, '2016-10-07 15:31:22', 'Student', 'Logged out'),
-(305, 1000000195, '2016-10-07 15:33:16', 'Student', 'Logged out'),
-(306, 1000000196, '2016-10-07 15:34:57', 'Student', 'Logged out'),
-(307, 1000000197, '2016-10-07 15:36:17', 'Student', 'Logged out'),
-(308, 1000000198, '2016-10-07 15:37:54', 'Student', 'Logged out'),
-(309, 1000000199, '2016-10-07 15:39:23', 'Student', 'Logged out'),
-(310, 1000000200, '2016-10-07 15:41:08', 'Student', 'Logged out'),
-(311, 1000000201, '2016-10-07 15:50:13', 'Student', 'Logged out'),
-(312, 1000000167, '2016-10-07 15:54:23', 'Student', 'Logged in'),
-(313, 1000000167, '2016-10-07 15:55:46', 'Student', 'Logged out'),
-(314, 1000000166, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(315, 1000000166, '2016-10-07 15:58:22', 'Student', 'Logged out'),
-(316, 1000000168, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(317, 1000000168, '2016-10-07 15:59:13', 'Student', 'Logged out'),
-(318, 1000000174, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(319, 1000000174, '2016-10-07 16:00:36', 'Student', 'Logged out'),
-(320, 1000000201, '2016-10-07 16:00:45', 'Student', 'Logged in'),
-(321, 1000000201, '2016-10-07 16:04:18', 'Student', 'Logged out'),
-(322, 1000000201, '2016-10-07 16:04:26', 'Student', 'Logged in'),
-(323, 1000000201, '2016-10-07 16:12:13', 'Student', 'Logged out'),
-(324, 100000098, '2016-10-07 16:12:21', 'Student', 'Logged in'),
-(325, 100000098, '2016-10-07 16:21:49', 'Student', 'Logged out'),
-(326, 100000077, '0000-00-00 00:00:00', 'Student', 'Logged in'),
-(327, 100000077, '2016-10-07 16:23:43', 'Student', 'Logged out'),
-(328, 1000000102, '2016-10-07 16:25:15', 'Student', 'Logged in'),
-(329, 1000000102, '2016-10-07 17:35:17', 'Student', 'Logged out'),
-(330, 1000000100, '2016-10-07 17:36:28', 'Student', 'Logged in'),
-(331, 1000000100, '2016-10-07 18:14:44', 'Student', 'Logged out'),
-(332, 100000098, '2016-10-07 18:14:54', 'Student', 'Logged in'),
-(333, 100000098, '2016-10-07 18:24:59', 'Student', 'Logged out'),
-(334, 1000000201, '2016-10-07 18:25:05', 'Student', 'Logged in'),
-(335, 1000000201, '2016-10-07 18:32:57', 'Student', 'Logged out'),
-(336, 1000000156, '2016-10-07 18:33:06', 'Student', 'Logged in'),
-(337, 1000000156, '2016-10-07 19:07:05', 'Student', 'Logged out'),
-(338, 100000098, '2016-10-07 19:07:23', 'Student', 'Logged in');
+(355, 1, '2024-04-17 16:33:37', 'Administrator', 'Logged out');
 
 -- --------------------------------------------------------
 
@@ -1841,7 +1632,7 @@ CREATE TABLE `tblpayment` (
   `TOTALSEMESTER` double NOT NULL,
   `PARTIALPAYMENT` double NOT NULL,
   `BALANCE` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -1862,7 +1653,7 @@ CREATE TABLE `tblschedule` (
   `COURSE_ID` int(11) NOT NULL,
   `SUBJ_ID` int(11) NOT NULL,
   `INST_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblschedule`
@@ -1875,24 +1666,12 @@ INSERT INTO `tblschedule` (`schedID`, `TIME_FROM`, `TIME_TO`, `sched_time`, `sch
 (263, '12:30 pm', '01:30 pm', '12:30 pm-01:30 pm', 'MWF', 'First', '2016-2017', '7', '1', 21, 179, 3),
 (264, '07:30 am', '09:30 am', '07:30 am-09:30 am', 'T', 'First', '2016-2017', '4', '1', 21, 181, 1),
 (265, '10:30 am', '12:00 pm', '10:30 am-12:00 pm', 'TTH', 'First', '2016-2017', '1', '1', 21, 182, 8),
-(267, '03:30 pm', '04:30 pm', '03:30 pm-04:30 pm', 'MWF', 'First', '2016-2017', '20', '1', 21, 180, 5),
-(268, '07:30 am', '08:30 am', '07:30 am-08:30 am', 'MWF', 'Second', '2016-2017', '10', '1', 21, 206, 2),
 (269, '08:30 am', '09:30 am', '08:30 am-09:30 am', 'MWF', 'Second', '2016-2017', '5', '1', 21, 207, 11),
-(270, '10:30 am', '11:30 am', '10:30 am-11:30 am', 'MWF', 'Second', '2016-2017', '3', '1', 21, 208, 6),
-(271, '12:30 pm', '02:30 pm', '12:30 pm-02:30 pm', 'M', 'Second', '2016-2017', '2', '1', 21, 212, 7),
-(272, '03:30 pm', '04:30 pm', '03:30 pm-04:30 pm', 'MWF', 'Second', '2016-2017', '9', '1', 21, 209, 8),
-(273, '07:30 am', '09:00 am', '07:30 am-09:00 am', 'TTH', 'Second', '2016-2017', '9', '1', 21, 213, 8),
-(274, '09:00 am', '10:30 am', '09:00 am-10:30 am', 'TTH', 'Second', '2016-2017', '10', '1', 21, 210, 5),
 (275, '01:30 pm', '03:00 pm', '01:30 pm-03:00 pm', 'TTH', 'Second', '2016-2017', '9', '1', 21, 211, 5),
 (276, '07:30 am', '08:30 am', '07:30 am-08:30 am', 'MWF', 'First', '2016-2017', '17', '1', 57, 183, 5),
-(277, '08:30 am', '09:30 am', '08:30 am-09:30 am', 'MWF', 'First', '2016-2017', '9', '1', 57, 184, 14),
 (278, '10:30 am', '11:30 am', '10:30 am-11:30 am', 'MWF', 'First', '2016-2017', '4', '1', 57, 185, 13),
-(279, '11:30 am', '12:30 pm', '11:30 am-12:30 pm', 'MWF', 'First', '2016-2017', '8', '1', 57, 186, 6),
 (280, '01:30 pm', '02:30 pm', '01:30 pm-02:30 pm', 'MWF', 'First', '2016-2017', '14', '1', 57, 187, 5),
 (281, '07:30 am', '09:00 am', '07:30 am-09:00 am', 'TTH', 'First', '2016-2017', '20', '1', 57, 188, 15),
-(282, '09:00 am', '10:30 am', '09:00 am-10:30 am', 'TTH', 'First', '2016-2017', '1', '1', 57, 189, 2),
-(283, '01:30 pm', '03:30 pm', '01:30 pm-03:30 pm', 'T', 'First', '2016-2017', '5', '1', 57, 190, 7),
-(284, '07:30 am', '08:30 am', '07:30 am-08:30 am', 'MWF', 'Second', '2016-2017', '6', '1', 57, 215, 16),
 (285, '08:30 am', '09:30 am', '08:30 am-09:30 am', 'MWF', 'Second', '2016-2017', '1', '1', 57, 216, 14),
 (286, '10:30 am', '11:30 am', '10:30 am-11:30 am', 'MWF', 'Second', '2016-2017', '19', '1', 57, 217, 17),
 (287, '11:30 am', '12:30 pm', '11:30 am-12:30 pm', 'MWF', 'Second', '2016-2017', '2', '1', 57, 218, 9),
@@ -2026,7 +1805,7 @@ CREATE TABLE `tblsemester` (
   `SEMID` int(11) NOT NULL,
   `SEMESTER` varchar(90) NOT NULL,
   `SETSEM` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblsemester`
@@ -2048,144 +1827,7 @@ CREATE TABLE `tblstuddetails` (
   `GUARDIAN_ADDRESS` varchar(255) NOT NULL,
   `GCONTACT` varchar(40) NOT NULL,
   `IDNO` int(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblstuddetails`
---
-
-INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `GCONTACT`, `IDNO`) VALUES
-(1, 'Bless Paredes', '', '09306587988', 100000056),
-(2, 'Marie Sanchez', '', '09305685455', 100000056),
-(3, 'Maria Palacios', '', '09282622522', 100000057),
-(4, 'Jenile Uy', '', '09307890988', 100000058),
-(5, 'Rex Lacson', '', '09302564877', 100000061),
-(6, 'Drey Gibson', '', '09212548759', 100000061),
-(7, 'Jean lacson', '', '09125465885', 100000062),
-(8, 'Marites Geasin', '', '09305478952', 100000067),
-(9, 'caryl', '', '09206487985', 100000068),
-(10, 'Ariel Kalinga', '', '09205478595', 100000069),
-(11, 'Ariel Kalinga', '', '09205478595', 100000069),
-(12, 'arian clavia', '', '09212343211', 100000071),
-(13, 'Hector Mangelen', '', '09287655567', 100000073),
-(14, 'Richard Henong', '', '09276456778', 100000076),
-(15, 'Ken Alamada', '', '09421550883', 100000077),
-(16, 'Mr. Plisaman', '', '09179959869', 100000079),
-(17, 'Bernard Madriaga', '', '09265544678', 100000080),
-(18, 'Mr. tesoro', '', '09351234567', 100000081),
-(19, 'Bernard Cadelina', '', '09179959869', 100000083),
-(20, 'Icer Yvas Exiomo', '', '09284578643', 100000084),
-(21, 'Baltazar Votacion Sr.', '', '09285764455', 100000085),
-(22, 'Ronald Dorado', '', '09287544590', 100000086),
-(23, 'Ray Dela Cruz', '', '09275633786', 100000087),
-(24, 'Ronaldo Catalan', '', '09267544795', 100000088),
-(25, 'Raynaldo Cordero', '', '09287756622', 100000090),
-(26, 'Norhan Mangulamas', '', '09256788098', 100000091),
-(27, 'Richard Legazpi', '', '09287566452', 100000092),
-(28, 'Mr. Betito', '', '09878576453', 100000093),
-(29, 'Mr. Betito', '', '09129877837', 100000094),
-(30, 'Mr. Betito', '', '09128776674', 100000095),
-(31, 'Mr. Mangulamas', '', '09998786756', 100000096),
-(32, 'Mr. Angeles', '', '09127765746', 100000097),
-(33, 'Mr. Merquillo', '', '9098877653', 100000098),
-(34, 'Rene Handoc', '', '09356673646', 100000099),
-(35, 'Mrs. Santiago', '', '09128767635', 1000000100),
-(36, 'Mr. Cadelina', '', '09128787646', 1000000101),
-(37, 'Mr. Bustamante', '', '09098785764', 1000000102),
-(38, 'Mr. Basa', '', '09199989991', 1000000103),
-(39, 'Mr. Cadet', '', '09887827673', 1000000104),
-(40, 'Dr. Abraham Peralta', '', '09188829773', 1000000105),
-(41, 'Mr. Borja', '', '09997876543', 1000000106),
-(42, 'Mr. Bong Bawaan', '', '09181127869', 1000000107),
-(43, 'Mr. Manda', '', '09189827837', 1000000108),
-(44, 'Mr. Daniel Villacruz', '', '09889876765', 1000000109),
-(45, 'Thelma Cadelina', '', '0916776658', 1000000110),
-(46, 'Mr. Tirasol', '', '09127876647', 1000000111),
-(47, 'Ptr. Siasico', '', '09357847783', 1000000112),
-(48, 'Mila Mier Handoc', '', '09387726776', 1000000113),
-(49, 'Mrs. Pagayon', '', '09998873837', 1000000114),
-(50, 'Mr.Villaruel', '', '09128738737', 1000000115),
-(51, 'Mr. Garcia', '', '09287736736', 1000000116),
-(52, 'Mr. Pelaez', '', '09756647368', 1000000117),
-(53, 'Mr. Roldan', '', '09387748372', 1000000118),
-(54, 'Mr. Loquias', '', '09678873736', 1000000119),
-(55, 'Mr. Lanuevo', '', '09287738372', 1000000120),
-(56, 'Mr. Edito Tenecio', '', '09878784774', 1000000121),
-(57, 'Mrs. Umpa', '', '0912877278', 1000000122),
-(58, 'Mr. Cadelina', '', '09187726736', 1000000123),
-(59, 'Mr. Villaruel', '', '09387728190', 1000000124),
-(60, 'Mr. Ronnie Alog', '', '09487736372', 1000000125),
-(61, 'Mr. Eran', '', '09237726252', 1000000126),
-(62, 'Mr. Valdez', '', '09123467589', 1000000127),
-(63, 'Mr. Eucare', '', '09991882736', 1000000128),
-(64, 'Mr. Doroteo', '', '09348728377', 1000000129),
-(65, 'Mr. Pagayao', '', '09367748372', 1000000130),
-(66, 'Mr. Gary Romano', '', '09992872883', 1000000131),
-(67, 'Mr. Manajero', '', '09238784788', 1000000132),
-(68, 'Mr. Kaliga', '', '09758765432', 1000000133),
-(69, '09753456789', '', '09751234765', 1000000134),
-(70, 'Mr.Ventura', '', '09875676234', 1000000135),
-(71, 'Mr. Careno', '', '09287655446', 1000000136),
-(72, 'Mr. Catalan', '', '09287566423', 1000000137),
-(73, 'Mr. Thunder Storm', '', '09666166666', 1000000139),
-(74, 'Mr. alamada', '', '09751256349', 1000000140),
-(75, 'Mr. Gavasan', '', '09776574673', 1000000142),
-(76, 'Mr. Gulay', '', '09228875647', 1000000143),
-(77, 'Mr. Mercado', '', '09228837654', 1000000144),
-(78, 'Mr. Gavasan', '', '09274654477', 1000000145),
-(79, 'Mr. Winters', '', '09128876374', 1000000146),
-(80, 'Mr. Mangelen', '', '09399390615', 1000000148),
-(81, 'Mr. Mangelen', '', '09399390615', 1000000149),
-(82, 'Mr. Alog', '', '09267532551', 1000000152),
-(83, 'Mr. Tacardon Sr.', '', '09398423112', 1000000153),
-(84, 'Mr. Miguel', '', '09390094212', 1000000154),
-(85, 'Mr. Gapasin', '', '09254633124', 1000000155),
-(86, 'Mr. Alog', '', '09092513887', 1000000156),
-(87, 'Mr. Hapinat', '', '09098765223', 1000000157),
-(88, 'Mr. Lazo', '', '09098790421', 1000000158),
-(89, 'Mr. Del Pilar', '', '09265325512', 1000000159),
-(90, 'Mr. Anajao', '', '09252355322', 1000000160),
-(91, 'Mr. Plang', '', '09257638897', 1000000161),
-(92, 'Mr. mantil', '', '09766554123', 1000000162),
-(93, 'Mr. Abdul', '', '09876543123', 1000000163),
-(94, 'Mr. Adapen', '', '09179959869', 1000000164),
-(95, 'Mr. mamadla', '', '09753412786', 1000000165),
-(96, 'Mr. Uga', '', '09876545236', 1000000166),
-(97, 'Mr. Presas', '', '09753412897', 1000000167),
-(98, 'Mr. Parcon', '', '09674534918', 1000000168),
-(99, 'Mr. Oranza', '', '09756463541', 1000000169),
-(100, 'Mr. Banares', '', '09876543675', 1000000170),
-(101, 'Mr. Magoncia', '', '09754345637', 1000000171),
-(102, 'Mr. Medrano', '', '09756367876', 1000000172),
-(103, 'Mr. Handoc', '', '09673465711', 1000000173),
-(104, 'Mr.Manangga', '', '09317834231', 1000000174),
-(105, 'Mr.Camelle', '', '09352478654', 1000000175),
-(106, 'Mr.Bacalso', '', '09756456432', 1000000176),
-(107, 'Mr. claudio', '', '09756462876', 1000000177),
-(108, 'Mr. Dalyne', '', '09671267213', 1000000178),
-(109, 'Mr.Nilos', '', '0987654536', 1000000179),
-(110, 'Mr. Aliso', '', '09876576543', 1000000180),
-(111, 'Mr. sullano', '', '09876565432', 1000000181),
-(112, 'Mr wellms', '', '09876754231', 1000000182),
-(113, 'Mr. Manda', '', '09876565434', 1000000183),
-(114, 'Mr. Chae', '', '09878767543', 1000000184),
-(115, 'Mr. Zevlag', '', '09876565432', 1000000185),
-(116, 'Mr. Parantar', '', '09764534187', 1000000186),
-(117, 'Mr.Burgos', '', '098776534234', 1000000187),
-(118, 'Mr.Stef', '', '09876709871', 1000000188),
-(119, 'Mr. Balboa', '', '09671243213', 1000000189),
-(120, 'Mr. Bumatay', '', '09765454321', 1000000190),
-(121, 'Mr.parcon', '', '09876756432', 1000000191),
-(122, 'Mr.Watson', '', '09876712098', 1000000192),
-(123, 'Mr. Tomboc', '', '098989878675', 1000000193),
-(124, 'Mr.Agot', '', '09167867120', 1000000194),
-(125, 'Mr. Venus', '', '09765453128', 1000000195),
-(126, 'Mr. Estrella', '', '09786754312', 1000000196),
-(127, 'Mr. Dina', '', '09675643127', 1000000197),
-(128, 'Mr. Nex', '', '09876545120', 1000000198),
-(129, 'Mr.Yapchangco', '', '09876562312', 1000000199),
-(130, 'Mr.Nueza', '', '09765423112', 1000000200),
-(131, 'Mr.Agravante', '', '0986756129', 1000000201);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -2218,122 +1860,7 @@ CREATE TABLE `tblstudent` (
   `SEMESTER` varchar(30) NOT NULL,
   `SYEAR` varchar(30) NOT NULL,
   `NewEnrollees` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblstudent`
---
-
-INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `ACC_USERNAME`, `ACC_PASSWORD`, `student_status`, `YEARLEVEL`, `STUDSECTION`, `COURSE_ID`, `STUDPHOTO`, `SEMESTER`, `SYEAR`, `NewEnrollees`) VALUES
-(13, 100000076, 'Junnel', 'Henong', 'L', 'Male', '1995-09-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09179959869', 'Koronadal City', 'junnel', 'c507f3285dc8f7c2ec06c8e84a5bcfdef5b75bc3', 'New', 1, 1, 30, '', 'First', '', 0),
-(14, 100000077, 'Alamada', 'Norhan', 'K', 'Male', '1995-08-10', 'Koronadal City', 'Single', 0, 'Filipino', 'Islam', '09287466580', 'Koronadal City', 'norhan', 'eb64988565e5d1a8eb2417a3d23781811f6316c8', 'New', 1, 1, 30, '', 'First', '', 0),
-(15, 100000079, 'Rabpani', 'Palisaman', 'p', 'Male', '1997-07-14', 'City of Tacurong', 'Single', 0, 'PIlipino', 'Islam', '09179959869', 'Tacurong City Alliance Church. Poblacion', 'palisaman', '2e2acf50c2e443211ce148db65e456120fc9edd4', 'New', 1, 1, 42, '', 'Second', '', 0),
-(16, 100000080, 'Edward', 'Madriaga', 'M', 'Male', '1999-08-26', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09264566776', 'Koronadal City', 'edward', '55b5a0f748d3a82dce10b205ecb0a0d8916c66a1', 'New', 2, 0, 30, '', 'Second', '', 1),
-(18, 100000083, 'Josh Bernard', 'Cadelina', 'H', 'Male', '1994-11-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '092756633785', 'Koronadal City', 'josh', 'c028c213ed5efcf30c3f4fc7361dbde0c893c5b7', 'New', 1, 0, 21, 'student_image/13406890_1099504936754825_2344921503074981979_n.jpg', 'First', '', 1),
-(19, 100000084, 'Icer Yves', 'Exiomo', 'F', 'Male', '1997-02-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09287466580', 'Koronadal City', 'icer', '8870c5997fb3dc73724d6ef9716013706bc0eb6d', 'New', 1, 0, 30, '', 'First', '', 1),
-(20, 100000085, 'Baltazar, Jr.', 'Votacion', 'B', 'Male', '1998-02-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09097844576', 'Koronadal City', 'baltazar', '97b13511481f75df46827988e27e8b925ee7c0ac', 'New', 1, 0, 30, '', 'First', '', 1),
-(21, 100000086, 'Jenny Lyn', 'Dorado', 'K', 'Male', '1996-02-29', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09754990672', 'Koronadal City', 'jenny', '6a3f4389a53c889b623e67f385f28ab8e84e5029', 'New', 1, 0, 21, '', 'First', '', 1),
-(22, 100000087, 'Ronald', 'Dela Cruz', 'K', 'Male', '1997-09-28', 'Koronadal City', 'Married', 0, 'Filipino', 'Espiritista', '09267588909', 'Koronadal City', 'ronald', '9d270ca213048cc46f762591f54b6a0d59390996', 'New', 0, 0, 30, '', 'First', '', 1),
-(23, 100000088, 'Ar ar', 'Catalan', 'C', 'Male', '1997-09-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09287569403', 'Koronadal City', 'arar', '1dface85bd933c1b72b17eec0bdb76ed95e659ba', 'New', 1, 0, 30, '', 'First', '', 1),
-(24, 100000090, 'Jenny Pearl', 'Cordero', 'K', 'Female', '1995-09-08', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09267577888', 'Koronadal City', 'pearl', '4ddc5d84096cb270103079731103f93082d8b099', 'New', 1, 0, 21, '', 'Second', '', 1),
-(25, 100000091, 'Bainusarah', 'Mangulamas', 'M', 'Female', '1997-02-15', 'Koronadal City', 'Single', 0, 'Filipino', 'Islam', '09267544890', 'Koronadal City', 'bai', '7c824f2e1c4d8e5c9445dd7ded4e96febed020f7', 'New', 1, 1, 30, '', 'Second', '', 1),
-(26, 100000092, 'Jerome', 'Legazpe', 'M', 'Male', '1996-02-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09275566712', 'Koronadal City', 'jerome', '723156650c5778d0e4df4b2fbfeefa65359302e5', 'New', 1, 1, 30, '', 'Second', '', 0),
-(29, 100000095, 'Johnrey', 'Betito', 'W', 'Male', '1998-09-09', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09878757575', 'Tacurong City', 'johnrey', '38bdca114849afd1be4000a690e233ee6ab11e25', 'New', 1, 0, 30, '', 'First', '', 1),
-(30, 100000096, 'Jammal', 'Mangulamas', 'L', 'Male', '1996-10-09', 'Cotabato', 'Single', 0, 'Filipino', 'Islam', '09129877756', 'Koronadal City', 'jammal', '55e95a5a5f88bbb32ea13542d428540fc4f6faea', 'New', 1, 0, 21, '', 'First', '', 1),
-(31, 100000097, 'Almohadnie', 'Angeles', 'O', 'Male', '1990-01-02', 'Isulan, Sultan Kudarat', 'Single', 0, 'Filipino', 'Islam', '09129989876', 'Koronadal City', 'almohadnie', '24655db0feba3830ac7bc346ee331e94d85201ac', 'New', 1, 0, 30, '', 'First', '', 1),
-(32, 100000098, 'Lorraine', 'Merquillo', 'S', 'Female', '1998-10-02', 'Zamboanga City', 'Single', 0, 'Filipino', 'Alliance', '09129987883', 'Koronadal City', 'lorraine', '007eedf694d0287b7f3609669737ee8025708336', 'Irregular', 1, 2, 42, '', 'First', '', 0),
-(33, 100000099, 'Joseph', 'Handoc', 'M', 'Male', '1995-07-29', 'Kidapawan City', 'Single', 0, 'Filipino', 'Alliance', '09087765556', 'Surallah, South Cotabato', 'joseph', '461476587780aa9fa5611ea6dc3912c146a91760', 'New', 1, 0, 21, '', 'First', '', 1),
-(34, 1000000100, 'Ivy', 'Santiago', 'B', 'Female', '1997-09-09', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09998877665', 'Koronadal City', 'ivy', '2c66c6e3c743465602c6dcd8e9412bee5fb846ed', 'New', 1, 1, 21, '', 'First', '', 0),
-(35, 1000000101, 'Suzette', 'Cadelina', 'H', 'Female', '1987-09-15', 'Koronadal City', 'Married', 0, 'Filipino', 'Alliance', '09127875674', 'Kidapawan City', 'suzette', '754597e45a1a8d6c6c071ea892194e8f5483f782', 'New', 1, 0, 42, '', 'First', '', 1),
-(36, 1000000102, 'Arjohn', 'Bustamante', 'G', 'Male', '1994-07-08', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09128987657', 'Tacurong City', 'arjohn', '33faf9c06d0cc880493e3c57a8fb25fb1e180610', 'New', 1, 0, 42, '', 'First', '', 1),
-(37, 1000000103, 'Christopher', 'Basa', 'K', 'Male', '1998-12-25', 'Regina, Canada', 'Single', 0, 'Filipino', 'Roman Catholic', '09367584758', 'Koronadal City', 'christopher', 'd6a3a4306f20dc52f478d602ba53e8d95963acac', 'New', 1, 0, 21, '', 'First', '', 1),
-(38, 1000000104, 'Remvi', 'Cadet', 'M', 'Male', '1990-11-08', 'Isulan, Sultan Kudarat', 'Single', 0, 'Filipino', 'Roman Catholic', '09128873674', 'Koronadal City', 'remvi', 'a38966035b61798fce9e1fd0cd3df4d2edb3d417', 'New', 1, 1, 30, '', 'First', '', 1),
-(39, 1000000105, 'Abby', 'Peralta', 'L', 'Female', '1994-10-29', 'Tacurong City', 'Single', 0, 'Filipino', 'Alliance', '09199989887', 'Koronadal City', 'abby', 'e76ceff3c47adb10f62b1acd7109f88fbd5e9ca7', 'New', 1, 1, 30, '', 'First', '', 1),
-(40, 1000000106, 'Mary Lee', 'Borja', 'H', 'Female', '1998-01-20', 'Kidapawan City, North Cotabato', 'Single', 0, 'Filipino', 'Roman Catholic', '09152283774', 'Koronadal City', 'marylee', '1c24578ca947f858d5735526cb7fd1e54dcb84e0', 'New', 1, 0, 21, '', 'First', '', 1),
-(41, 1000000107, 'Jhing', 'Bawaan', 'T', 'Female', '1999-05-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Evangelical', '09165567890', 'Koronadal City', 'jhing', 'fcf49f880f12c32bf91b172910440771279e0878', 'New', 1, 1, 21, '', 'First', '', 1),
-(42, 1000000108, 'Edwin', 'Manda', 'G', 'Male', '1999-08-20', 'Bukidnon', 'Single', 0, 'Filipino', 'Alliance', '09098765434', 'Koronadal City', 'edwin', '3c7a591985b5e780ebcc40916fdeb443b8541c2a', 'New', 1, 0, 21, '', 'First', '', 1),
-(43, 1000000109, 'Danae Shaira', 'Villacruz', 'G', 'Female', '1997-03-04', 'Tacurong City, Sultan Kudarat', 'Single', 0, 'Filipino', 'A ', '09178766776', 'Koronadal City', 'danae', 'eb93e232a50ba000b7a9e0779c92e9e87d804058', 'New', 1, 0, 21, '', 'First', '', 1),
-(44, 1000000110, 'Gwendolyn', 'Cadelina', 'H', 'Female', '1995-10-16', 'Kidapawan City', 'Single', 0, 'Filipino', 'Alliance', '09887676546', 'Koronadal City', 'gwendolyn', '93b7df2fa1586cc4351e99bce3f74805c1df4790', 'New', 1, 0, 21, '', 'First', '', 1),
-(45, 1000000111, 'Kiana Justine', 'Tirasol', 'C', 'Female', '1997-04-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09127788767', 'Koronadal City', 'kiana', '703ddbc5fe426b4973c206f758719f6009b363c3', 'New', 1, 0, 21, '', 'First', '', 1),
-(46, 1000000112, 'Hannah', 'Siasico', 'C', 'Female', '1998-02-04', 'Tacurong City, Sultan Kudarat', 'Single', 0, 'Filipino', 'Alliance', '09187767645', 'Koronadal City', 'hannah', '675dc611bafb0b7348dd3baf7e005b6916fb954d', 'New', 1, 0, 21, '', 'First', '', 1),
-(47, 1000000113, 'Laraine Dee', 'Handoc', 'M', 'Female', '0000-00-00', 'Koronadal City', 'Single', 0, '09356672663', 'Alliance', '09356672663', 'Koronadal City', 'laraine', 'c8915fcccf9088a7b8f8242d9fbed3017cc573a8', 'New', 1, 0, 21, '', 'First', '', 1),
-(48, 1000000114, 'Elzevir', 'Pagayon', 'P', 'Male', '1999-05-01', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09289937774', 'Koronadal City', 'elzevir', 'be0127ba8587beced734e5a350582f3dba5e5b4b', 'New', 1, 0, 21, '', 'First', '', 1),
-(49, 1000000115, 'Novelyn', 'Villaruel', 'Y', 'Female', '1998-05-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09878874847', 'Koronadal City', 'novelyn', '661382b240420fef499ddb3168c5182b4045113d', 'New', 1, 0, 21, '', 'First', '', 1),
-(50, 1000000116, 'Jeremiah', 'Garcia', 'G', 'Male', '2011-11-11', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09678837637', 'Koronadal City', 'jeremiah', 'a9df78b4b5c00745f26b0821b2cc57336a474862', 'New', 1, 0, 21, '', 'First', '', 1),
-(51, 1000000117, 'Ruby Ann', 'Pelaez', 'G', 'Female', '1997-10-04', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09234646773', 'Koronadal City', 'ruby', '18e40e1401eef67e1ae69efab09afb71f87ffb81', 'New', 1, 0, 21, '', 'First', '', 1),
-(52, 1000000118, 'Pia Samantha', 'Roldan', 'C', 'Female', '1995-09-23', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09127873664', 'Koronadal City', 'pia', '5cd788f9fa28387309d0bcc2c5429570ee9fe30e', 'New', 1, 0, 21, '', 'First', '', 1),
-(53, 1000000119, 'Virgil', 'Loquias', 'M', 'Male', '1993-04-05', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09478837288', 'Koronadal City', 'virgil', '8460e247a3dbc5da1ba0ca46c5321ac9db046fb9', 'New', 1, 0, 21, '', 'First', '', 1),
-(54, 1000000120, 'Precious', 'Lanuevo', 'N', 'Female', '1997-09-04', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09238847849', 'Koronadal City', 'precious', '42e63a94dbeff43190f6c03f7c5885c01c87c200', 'New', 1, 0, 21, '', 'First', '', 1),
-(55, 1000000121, 'Carlyne Joy', 'Tenecio', 'H', 'Female', '1997-10-26', 'Koronadal City', 'Single', 0, 'Filipino', 'Baptist', '09127738462', 'Koronadal City', 'carlyne', '9dbb824721b2dbdbd89077996cdab1d940764303', 'New', 1, 0, 30, 'student_image/12909489_1257077340988202_2965799069910400828_o.jpg', 'First', '', 1),
-(56, 1000000122, 'Jake', 'Umpa', 'U', 'Male', '1992-08-31', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09237873662', 'Koronadal City', 'jake', 'c8d99c2f7cd5f432c163abcd422672b9f77550bb', 'New', 1, 0, 30, '', 'First', '', 1),
-(57, 1000000123, 'Michael', 'Cadelina', 'T', 'Male', '1996-08-21', 'Koronadal City', 'Single', 0, 'Filipino', 'Conventional Baptist', '09148874738', 'Koronadal City', 'michael', '17b9e1c64588c7fa6419b4d29dc1f4426279ba01', 'New', 1, 0, 30, '', 'First', '', 1),
-(58, 1000000124, 'Kristine', 'Villaruel', 'B', 'Female', '1995-06-11', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09477463722', 'Koronadal City', 'kristine', 'a63a3be77fa51c8ca25c3b8be5ac5d0e93917c0b', 'New', 1, 0, 30, '', 'First', '', 1),
-(59, 1000000125, 'Kindahl', 'Alog', 'E', 'Female', '1999-04-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09192883737', 'Koronadal City', 'kindahl', '4dc1091beca44e5133fe7ca443ce4116e6275006', 'New', 1, 0, 30, '', 'First', '', 1),
-(60, 1000000126, 'Jecel', 'Eran', 'K', 'Female', '1998-03-02', 'Koronadal City', 'Single', 0, 'Filipino', 'Baptist', '09789938383', 'Koronadal City', 'jecel', 'efa848a414acf8bd9b39c2c55b55a6901c648f89', 'New', 1, 1, 30, '', 'First', '', 0),
-(61, 1000000127, 'Earle', 'Valdez', 'Q', 'Male', '1997-11-26', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09567748392', 'Koronadal City', 'earle', 'aa2521688dc8a0d74bd77a583e928d31a5731836', 'New', 1, 1, 30, '', 'First', '', 0),
-(62, 1000000128, 'Gaudelyn', 'Eucare', 'V', 'Female', '1996-02-14', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09578847384', 'Koronadal City', 'gaudelyn', 'e03a6ee418ce3dc843a2b9c8abdbb7af253d919d', 'New', 1, 0, 30, '', 'First', '', 1),
-(63, 1000000129, 'Ellyza', 'Doroteo', 'O', 'Female', '1996-12-12', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09127736846', 'Koronadal City', 'ellyza', '886093a9895ab643ddb92809dd62eb898a88751f', 'New', 1, 0, 42, '', 'First', '', 1),
-(64, 1000000130, 'Cunanan', 'Pagayao', 'L', 'Male', '1990-10-14', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09257748383', 'Koronadal City', 'cunanan', '894f59cb98e073fec902cbbff0e9d143102082fd', 'New', 1, 0, 42, '', 'First', '', 1),
-(65, 1000000131, 'Samantha', 'Romano', 'I', 'Female', '1990-12-05', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09238746574', 'Koronadal City', 'samantha', 'ec5a7c3e21436a8e76716710ce551356f9aa745e', 'Transferee', 3, 0, 32, '', 'First', '', 1),
-(66, 1000000132, 'Charnel', 'Manajero', 'D', 'Male', '1990-05-19', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09768859575', 'Koronadal City', 'charnel', 'eab5aa588a82582c0f60e4d6b304d6822efb127e', 'New', 0, 0, 30, '', 'First', '', 1),
-(67, 1000000133, 'Timmy-babe', 'kaliga', 'k', 'Male', '1998-05-05', 'Lambayung sultan Kudarat', 'Single', 0, 'Filipino', 'Islam', '09752345768', 'Lambayung sultan kudarat ', 'Timmy', 'cb88945e9d64c16a44cb4cf567b2b6a211e9dce2', 'New', 1, 1, 21, '', 'First', '', 1),
-(68, 1000000134, 'Reann', 'Alaban', 'K', 'Male', '1997-09-08', 'Isulan, Sultan Kudarat', 'Single', 0, 'Filipino', 'Roman Catholic', '9756787455', 'Isulan, Sultan Kudarat', 'Reann', 'f31445a35f65dbc7040cb5b1bd58f1a70ff4b093', 'New', 1, 1, 21, '', 'First', '', 1),
-(69, 1000000135, 'Redd', 'Ventura', 'V', 'Male', '1996-08-07', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09757867543', 'Koronadal City', 'Redd', '0e3b14615c2c441f2215aff1fe5488866545b9c5', 'New', 1, 0, 21, '', 'First', '', 1),
-(70, 1000000136, 'Ronald', 'Careno', 'M', 'Female', '2002-02-01', 'Koronadal City', 'Single', 0, '09257655897', 'Roman Catholic', '09257655897', 'Koronadal City', 'careno', '0160c52958109c870c01b623f7846c414bf0b0f5', 'New', 1, 0, 30, '', 'First', '', 1),
-(71, 1000000137, 'Kyla', 'Catalan', 'C', 'Female', '1997-01-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09287566444', 'Koronadal City', 'kyla', 'd4e85d45106df12908f2fb2490bd303ad8a30d32', 'New', 1, 0, 42, '', 'First', '', 1),
-(72, 1000000139, 'Rain', 'Storm', 'G', 'Female', '2001-02-01', 'Cotabato City, Sultan Kudarat', 'Single', 0, '09129978666', 'Illuminati', '09129978666', 'Catalunan Grande, Davao City, Sultan Kudarat', 'rain', 'fbec17cb2fcbbd1c659b252230b48826fc563788', 'New', 1, 1, 30, '', 'First', '', 1),
-(73, 1000000140, 'khein', 'alamada', 'c', 'Male', '1997-10-07', 'pob. datu paglas', 'Single', 0, 'Filipino', 'Islam', '09751209609', 'Datu Paglas', 'khein', '20ae5f2ba23d8ba0798e8ae1f48701d3c14db635', 'New', 1, 1, 21, '', 'First', '', 1),
-(80, 1000000149, 'Yancy', 'Mangelen', 'M', 'Male', '1997-08-28', 'Buluan, Maguindanao', 'Single', 0, 'Filipino', 'Islam', '09753558619', 'columbio, sultan kudarat', 'yancy', '70a24d536eb68af18a2f5051690c3021e98b1f8e', 'New', 1, 1, 21, '', 'First', '', 1),
-(81, 1000000152, 'Zennia Rica', 'Alog', 'M', 'Female', '1998-01-20', 'Koronadal City', 'Single', 0, '09274658202', 'Conventional Baptist', '09274658202', 'Koronadal City', 'rica', 'e2d9832b3cefa975803be763b95d3c502c42a0dc', 'New', 1, 0, 42, '', 'First', '', 1),
-(82, 1000000153, 'Sam', 'Tacardon Jr.', 'M', 'Male', '1998-02-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09274355123', 'Koronadal City', 'sam', 'f16bed56189e249fe4ca8ed10a1ecae60e8ceac0', 'New', 1, 1, 42, '', 'First', '', 1),
-(83, 1000000154, 'NiÃ±a Rica ', 'Miguel', 'G', 'Female', '1999-05-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09287535332', 'Koronadal City', 'nina', 'b443de4b0ff48581d8743a5f5cad5321e40054c2', 'New', 1, 0, 42, '', 'First', '', 1),
-(84, 1000000155, 'Gianna Mae', 'Gapasin', 'K', 'Female', '1999-01-29', 'Koronadal City', 'Single', 0, 'Filipino', 'Islam', '09274523532', 'Koronadal City', 'gianna', '72b1ddf9b91795e4bde0de7811e8e35865e1f0f7', 'New', 1, 0, 42, '', 'First', '', 1),
-(85, 1000000156, 'Rojie Andrea', 'Alog', 'H', 'Female', '1999-09-28', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09275644190', 'Koronadal City', 'rojie', '4f07c77b1d33cce74323b28bb449979c42e9a151', 'New', 1, 2, 42, '', 'First', '', 0),
-(86, 1000000157, 'Jerih Mae', 'Hapinat', 'H', 'Female', '1998-12-12', 'Koronadal City', 'Single', 0, 'Filipino', 'Conventional Baptist', '09274344123', 'Koronadal City', 'jerih', '7fc63d22370ec9812fc7a94d6adf74a5511b5e6d', 'New', 1, 0, 42, '', 'First', '', 1),
-(87, 1000000158, 'Krista Mae', 'Lazo', 'C', 'Female', '1998-08-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09265355123', 'Koronadal City', 'krista', 'ba770747d84d60654212d3173c719564d2f30240', 'New', 1, 0, 42, '', 'First', '', 1),
-(88, 1000000159, 'Rossel Abasola', 'Del Pilar', 'B', 'Female', '1999-01-30', 'Koronadal City', 'Single', 0, 'Filipino', 'Islam', '09285355102', 'Koronadal City', 'rossel', 'd35fb797cd118a2bb7b679cee6ceada9a6bdd151', 'New', 1, 0, 42, '', 'First', '', 1),
-(89, 1000000160, 'Allyza Joyce', 'Anajao', 'A', 'Female', '1998-02-21', 'Koronadal City', 'Single', 0, 'Filipino', 'Espiritista', '09251908245', 'Koronadal City', 'allyza', '5b13d27681d01db855b898f5c3ff33f592138806', 'New', 1, 0, 42, '', 'First', '', 1),
-(90, 1000000161, 'Joali', 'Plang ', 'C', 'Male', '1997-09-13', 'Buluan, Maguindanao', 'Single', 0, 'Filipino', 'Islam', '09256171768', 'Buluan, Maguindanao', 'joali', '87d59f4b9ca4058fa88b586ce4ef27492562873e', 'New', 1, 1, 21, '', 'First', '', 1),
-(91, 1000000162, 'jahad', 'mantil', 'k', 'Male', '1998-08-23', 'Buluan, Maguindanao', 'Single', 0, 'Filipino', 'Islam', '09753421234', 'Buluan, Maguindanao', 'jahad', '34753f1ba315c18f3ffa134ec02c4ffbdf2bc9cb', 'New', 1, 1, 21, '', 'First', '', 0),
-(92, 1000000163, 'hamid', 'Abdul', 'G', 'Male', '1997-07-25', 'City of Tacurong', 'Single', 0, 'Philippines', 'Islam', '09765623654', 'Tacurong City Alliance Church. Poblacion', 'hamid', 'e5c4f933a178cd626655c7715ac38cde59f1efe3', 'New', 1, 1, 42, '', 'First', '', 0),
-(93, 1000000164, 'kamaruden', 'adapen ', 'K', 'Male', '1998-06-12', 'City of Tacurong', 'Single', 0, 'Filipino', 'Islam', '09876543143', 'Tacurong City Alliance Church. Poblacion', 'kamaruden', '0a5c751a397ba846cdf3578da5d5107875ad1e6d', 'New', 1, 1, 42, '', 'First', '', 0),
-(94, 1000000165, 'Abdulsalam', 'mamadla', 'L', 'Male', '1998-05-15', 'new carmen tacurong city', 'Single', 0, 'Filipino', 'Islam', '09757645152', 'new Carmen tacurong city', 'mamadla', '19cb9f6c054fc862004d2e2d14356bed5c162ef7', 'New', 1, 1, 42, '', 'First', '', 0),
-(95, 1000000166, 'alex', 'Uga', 'H', 'Male', '1997-08-12', 'Tacurong City', 'Single', 0, 'Filipino', 'Islam', '09756544523', 'tacurong City', 'alex', '60c6d277a8bd81de7fdde19201bf9c58a3df08f4', 'New', 1, 1, 42, '', 'First', '', 0),
-(96, 1000000167, 'Ron bryan ', 'Presas', 'P', 'Male', '1998-07-06', 'isulan sultan kudarat', 'Single', 0, 'Filipino', 'Catholic', '09751234765', 'Lambayung, Sultan Kudarat ', 'Presas', '111ef72383af1ef97f8dfac345e2e052b72b2e9e', 'New', 1, 1, 42, '', 'First', '', 0),
-(97, 1000000168, 'Anne', 'Parcon', 'S', 'Female', '1999-09-07', 'new carmen tacurong city', 'Single', 0, 'Filipino', 'Roman Catholic', '09265112349', 'new Carmen tacurong city', 'anne', '96657fd33d4351fb0ec777fd7064e03b0adc3a35', 'New', 1, 1, 42, '', 'First', '', 0),
-(98, 1000000169, 'Christian', 'Oranza', 'K', 'Male', '1999-07-06', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09876543565', 'Koronadal City', 'christian', '2314b2e3a4a1f7db165be2aafbf1efd78f28cc97', 'New', 1, 1, 42, '', 'First', '', 0),
-(99, 1000000170, 'Ella', 'Banares', 'H', 'Female', '1998-04-04', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09123445768', 'Koronadal City', 'ella', '5edf31da3f42a518437a149eb6d70cd01c02c3cd', 'New', 1, 1, 42, '', 'First', '', 0),
-(100, 1000000171, 'Dexter', 'Magoncia', 'M', 'Male', '1997-05-05', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09675413276', 'tacurong city', 'dexter', 'efce8cd161897feeaa7979d892dc26a8a8d8eea3', 'New', 1, 1, 42, '', 'First', '', 0),
-(101, 1000000172, 'Elea', 'Medrano', 'M', 'Female', '1997-04-04', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09876312342', 'Koronadal City', 'elea', '687bc2d923531096fac1059dfb9c606182c0958d', 'New', 1, 1, 42, '', 'First', '', 0),
-(102, 1000000173, 'Joseph', 'Handoc', 'K', 'Female', '0207-01-07', 'Koronadal City', 'Single', 0, '09811326781', 'Roman Catholic', '09811326781', 'Koronadal City', 'Handoc', 'e6b38ca094163918db68452fbe5ace8732794415', 'New', 1, 1, 42, '', 'First', '', 0),
-(103, 1000000174, 'Zoharto', 'Manangga', 'M', 'Male', '1998-11-23', 'Lambayung sultan Kudarat', 'Single', 0, 'Filipino', 'Islam', '09123487657', 'Lambayung sultan kudarat ', 'zoharto', 'eedda5500b1e2bce2cb46aaf959587429a8669cd', 'New', 1, 1, 42, '', 'First', '', 0),
-(104, 1000000175, 'Bianca', 'Camelle', 'C', 'Female', '1998-12-23', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09352176898', 'Koronadal City', 'bianca', '2a69ed80e5dfa142aa29c01680eb65649b12b9b6', 'New', 1, 1, 42, '', 'First', '', 0),
-(105, 1000000176, 'Jhon', 'Bacalso', 'B', 'Male', '1996-03-07', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09756765432', 'Koronadal City', 'jhon', 'c27224cfa8386dcd2bb90db1e1ed7f0747de8cd7', 'New', 1, 1, 42, '', 'First', '', 0),
-(106, 1000000177, 'Kristina', 'claudio', 'K', 'Female', '1998-11-30', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09756478765', 'Koronadal City', 'kristina', '2d3b2ae69a50d2c9c76ad4e6a67c7707909d0797', 'New', 1, 1, 42, '', 'First', '', 0),
-(107, 1000000178, 'Miralles', 'Dalyne', 'H', 'Female', '1999-02-04', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09654367543', 'Koronadal City', 'miralles', '08b1cf978acabd01a00322224e5c52c31ae8dbfd', 'New', 1, 1, 42, '', 'First', '', 0),
-(108, 1000000179, 'Janette', 'Nillos', 'A', 'Female', '1997-02-01', 'Tacurong City', 'Single', 0, '09876543564', 'Roman Catholic', '09876543564', 'tacurong City', 'janette', 'db744ba63c35ddb50f92933afaeebaef9025483a', 'New', 1, 1, 42, '', 'First', '', 0),
-(109, 1000000180, 'Farsallah', 'Aliso', 'A', 'Female', '1997-06-25', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09786756432', 'Tacurong City', 'farsallah', 'f2d9114d659e229e7b58f5813daaa9d88cb841ab', 'New', 1, 1, 42, '', 'First', '', 0),
-(110, 1000000181, 'Lady Lyn', 'Sullano', 'B', 'Female', '1997-08-15', 'Tacurong City', 'Single', 0, 'Filipino', 'Catholic', '09878767654', 'Koronadal City', 'ladylyn', '470f859af53837465e3c8fc53ae4a1be800d7240', 'New', 1, 1, 42, '', 'First', '', 0),
-(111, 1000000182, 'alex', 'wellms', 'W', 'Male', '1995-07-16', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09756454322', 'Koronadal City', 'wellms', '63bdc53e431e4957b62faa6cd0465a666bd6ce1e', 'New', 1, 1, 42, '', 'First', '', 0),
-(112, 1000000183, 'Glyd', 'Manda', 'M', 'Male', '1997-03-24', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09122366754', 'Koronadal City', 'glyd', 'cd31ef62c1722df14cbc0bc238cbbe9cb5e970ca', 'New', 1, 1, 42, '', 'First', '', 0),
-(113, 1000000184, 'wevan', 'chae', 'D', 'Male', '1997-11-12', 'Tacurong City, Sultan Kudarat', 'Single', 0, 'Filipino', 'Roman Catholic', '098765453', 'Tacurong City Alliance Church. Poblacion', 'wevan', 'aadad817d5f525087ca053ccce75ac5e9bafd3a0', 'New', 1, 1, 42, '', 'First', '', 0),
-(114, 1000000185, 'Kitty', 'Zevlag', 'Z', 'Male', '1995-10-25', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09872354676', 'Koronadal City', 'kitty', '95d79f53b52da1408cc79d83f445224a58355b13', 'New', 1, 1, 42, '', 'First', '', 0),
-(115, 1000000186, 'Christine', 'Parantar', 'H', 'Female', '1996-09-18', 'Tacurong City', 'Single', 0, 'Filipino', 'Alliance', '09876754123', 'tacurong City', 'christine', '70e8b6e13c18e8800ef6b67166d0409e66ab58a9', 'New', 1, 1, 42, '', 'First', '', 0),
-(116, 1000000187, 'JC', 'Burgos', 'B', 'Male', '1996-09-17', 'Koronadal City', 'Single', 0, 'Filipino', 'Alliance', '09871234981', 'Koronadal City', 'jc', 'f9ae8604de015e6fc12a1ebdbe72f262b981a2f6', 'New', 1, 1, 42, '', 'First', '', 0),
-(117, 1000000188, 'Dedal', 'Stef', 'S', 'Male', '1996-09-15', 'Koronadal City', 'Single', 0, 'Filipino', 'Roman Catholic', '09877656123', 'Koronadal City', 'dedal', 'bc370f94f6cf9acc580c2c50f3d4dff756e39bac', 'New', 1, 1, 42, '', 'First', '', 0),
-(118, 1000000189, 'Tessa', 'Balboa', 'T', 'Female', '2000-02-23', 'Tacurong City', 'Single', 0, 'Filipino', 'Catholic', '-09765445321', 'tacurong ciy', 'tessa', 'e2e18d551d92039e2ae71fc6854f0a12d2f9a730', 'New', 1, 1, 42, '', 'First', '', 0),
-(119, 1000000190, 'Neoboy', 'Bumatay', 'A', 'Male', '0196-11-09', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09564534198', 'Koronadal City', 'neoboy', 'e5aa55fb947a507a6b9fddcb2885eea498b2ace9', 'New', 1, 1, 42, '', 'First', '', 0),
-(120, 1000000191, 'Marian', 'Parcon', 'K', 'Female', '2000-11-17', 'Tacurong City', 'Single', 0, 'Filipino', 'Roman Catholic', '09876545676', 'Koronadal City', 'marian', '15985e73bfe2e61c83c1b328087be49992d25081', 'New', 1, 1, 42, '', 'First', '', 0),
-(121, 1000000192, 'Jonathan', 'Watson', 'A', 'Male', '1996-10-19', 'Koronadal City', 'Single', 0, 'Filipino-Canadian', 'Roman Catholic', '09674523897', 'Koronadal City', 'jonathan', '3692bfa45759a67d83aedf0045f6cb635a966abf', 'New', 1, 1, 42, '', 'First', '', 0),
-(122, 1000000193, 'Arliz', 'Tomboc', 'T', 'Male', '1997-12-12', 'Tacurong City', 'Single', 0, 'Filipino', 'Catholic', '09876523109', 'Koronadal City', 'arliz', 'e9bc16a650318b1a218c3212e63af7f5c65f9295', 'New', 1, 1, 42, '', 'First', '', 0),
-(123, 1000000194, 'Rhon', 'Agot', 'V', 'Male', '1997-11-22', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09261789765', 'Koronadal City', 'rhon', '473f8c82c83421d18ecb9464d158b846f611008f', 'New', 1, 1, 42, '', 'First', '', 0),
-(124, 1000000195, 'Alison', 'Venus', 'S', 'Female', '1997-03-23', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '-09176534281', 'Koronadal City', 'alison', '4a4f22fbabc5d6375b354538de0249eb0a80f614', 'New', 1, 1, 42, '', 'First', '', 0),
-(125, 1000000196, 'Pauline ', 'Estrella', 'E', 'Female', '1996-11-30', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09756754121', 'Koronadal City', 'pauline', 'e4b4cd4210ee87c60da653c1b6a77d529c1a079d', 'New', 1, 1, 42, '', 'First', '', 0),
-(126, 1000000197, 'Diane', 'Dina', 'D', 'Female', '2000-11-09', 'Tacurong City', 'Single', 0, 'Filipino', 'Catholic', '09176564129', 'Koronadal City', 'diane', 'daf3ef29366afaf65c691b1e42f84c8621f09db6', 'New', 1, 1, 42, '', 'First', '', 0),
-(127, 1000000198, 'klee', 'Nex', 'X', 'Male', '1997-11-17', 'Tacurong City', 'Single', 0, 'Filipino', 'Catholic', '09765412098', 'Koronadal City', 'klee', 'e47124b77b6860396297e8649228afd93a29bc6f', 'New', 1, 1, 42, '', 'First', '', 0),
-(128, 1000000199, 'Betchay', 'Yapchengco', 'Y', 'Female', '1996-09-16', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09657654192', 'Koronadal City', 'betchay', 'aafe76c1565aa924f2674f5c6d1c0d38cb81802b', 'New', 1, 1, 42, '', 'First', '', 0),
-(129, 1000000200, 'Tito', 'Nueza ', 'A', 'Male', '1997-06-14', 'Koronadal City', 'Single', 0, 'Filipino', 'Catholic', '09876756120', 'Koronadal City', 'tito', '1a96f9437697ef43237868412d77b15991964f6e', 'New', 1, 1, 42, '', 'First', '', 0),
-(130, 1000000201, 'Randy', 'Agravante', 'A', 'Male', '1998-11-12', 'Koronadal City', 'Single', 0, 'Filipino-Canadian', 'Catholic', '09876512812', 'Koronadal City', 'randy', '68507a13665ec3a31759c0d3a94804221c0a87d3', 'New', 1, 1, 42, '', 'First', '', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -2349,14 +1876,14 @@ CREATE TABLE `useraccounts` (
   `ACCOUNT_TYPE` varchar(30) NOT NULL,
   `EMPID` int(11) NOT NULL,
   `USERIMAGE` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `useraccounts`
 --
 
 INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `ACCOUNT_PASSWORD`, `ACCOUNT_TYPE`, `EMPID`, `USERIMAGE`) VALUES
-(1, 'Josh Cadelina', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 1234, 'photos/LoginRed.jpg'),
+(1, 'Administrator', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 1234, 'photos/LoginRed.jpg'),
 (2, 'Norhan Alamada', 'norhan', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Registrar', 0, '');
 
 --
@@ -2482,82 +2009,109 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `COURSE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `DEPT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1507;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1598;
+
 --
 -- AUTO_INCREMENT for table `schoolyr`
 --
 ALTER TABLE `schoolyr`
-  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+  MODIFY `SYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
+
 --
 -- AUTO_INCREMENT for table `studentschedule`
 --
 ALTER TABLE `studentschedule`
   MODIFY `CLASS_ID` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `studentsubjects`
 --
 ALTER TABLE `studentsubjects`
-  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1501;
+  MODIFY `STUDSUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1592;
+
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
   MODIFY `SUBJ_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
+
 --
 -- AUTO_INCREMENT for table `tblauto`
 --
 ALTER TABLE `tblauto`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tblinstructor`
 --
 ALTER TABLE `tblinstructor`
   MODIFY `INST_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
 --
 -- AUTO_INCREMENT for table `tbllogs`
 --
 ALTER TABLE `tbllogs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=339;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=356;
+
 --
 -- AUTO_INCREMENT for table `tblpayment`
 --
 ALTER TABLE `tblpayment`
   MODIFY `PAYMENTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
 --
 -- AUTO_INCREMENT for table `tblschedule`
 --
 ALTER TABLE `tblschedule`
   MODIFY `schedID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
+
 --
 -- AUTO_INCREMENT for table `tblsemester`
 --
 ALTER TABLE `tblsemester`
   MODIFY `SEMID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
   MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `department`
+--
+ALTER TABLE `department`
+  ADD CONSTRAINT `department_ibfk_1` FOREIGN KEY (`DEPT_ID`) REFERENCES `course` (`DEPT_ID`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
