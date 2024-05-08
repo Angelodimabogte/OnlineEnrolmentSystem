@@ -66,12 +66,14 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
   }
 
 body {
-  background: url(../img/bg.jpg) repeat center center fixed ;
+  background: url(../img/pexels-francesco-ungaro-281260.jpg) repeat center center fixed ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
 }
+
 
 .login-form {
   margin-top: 60px;
@@ -79,7 +81,7 @@ body {
 
 form[role=login] {
   color: #5d5d5d;
-  background: #accbb2;
+  background: #5ca3f8;
   padding: 26px;
   border-radius: 10px;
   -moz-border-radius: 10px;

@@ -1,4 +1,4 @@
-<!-- search -->  
+<!-- search -->
 <!-- <div class="panel panel-default">
     <div class="panel-body">
      <form action="index.php?q=product" method="post">
@@ -12,7 +12,7 @@
         </div>
     </form>
 
-    </div> 
+    </div>
 </div> -->
 <!-- end serch -->
 
@@ -20,12 +20,12 @@
 
 
 <!-- category -->
- <div class="panel panel-default"> 
+ <div class="panel panel-default">
     <div class="panel-body">
     <div class="list-group">
      <div class="well well-sm " style="background-color:#098744;color:#fff;"><b> Courses </b> </div>
         <ul >
-        <?php 
+        <?php
             $mydb->setQuery("SELECT distinct(COURSE_DESC)
                       FROM  `course`");
               $cur = $mydb->loadResultList();
@@ -35,17 +35,18 @@
             }
         ?>
          </ul>
-      </div> 
-   </div> 
+      </div>
+   </div>
 </div>
 <!-- end category -->
 
 
 <!-- login -->
-<?php 
+<?php
 if(!isset($_SESSION['IDNO'])){
 
 ?>
+<<<<<<< Updated upstream
  <div class="panel panel-default">
     <div class="panel-body">
         <div class="well well-sm"  style="background-color:#098744;color:#fff;"><b >  Login </b> </div>
@@ -77,5 +78,7 @@ if(!isset($_SESSION['IDNO'])){
 
         </div> 
 </div>
+=======
+
+>>>>>>> Stashed changes
 <?php } ?>
- 

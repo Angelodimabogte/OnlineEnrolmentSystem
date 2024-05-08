@@ -61,102 +61,101 @@ $totunit =0;
 }
 
 
-//  if (isset($_POST['regsubmit'])) {
+if (isset($_POST['regsubmit'])) {
 
-// $_SESSION['STUDID']     =  $_POST['IDNO'];
-// $_SESSION['FNAME']        =  $_POST['FNAME'];
-// $_SESSION['LNAME']      =  $_POST['LNAME'];
-// $_SESSION['MI']           =  $_POST['MI'];
-// $_SESSION['PADDRESS']     =  $_POST['PADDRESS'];
-// $_SESSION['SEX']          =  $_POST['optionsRadios'];
-// $_SESSION['BIRTHDATE']    = date_format(date_create($_POST['BIRTHDATE']),'Y-m-d'); 
-// $_SESSION['NATIONALITY']  =  $_POST['NATIONALITY'];
-// $_SESSION['BIRTHPLACE']   =  $_POST['BIRTHPLACE'];
-// $_SESSION['RELIGION']     =  $_POST['RELIGION'];
-// $_SESSION['CONTACT']      =  $_POST['CONTACT'];
-// $_SESSION['CIVILSTATUS']  =  $_POST['CIVILSTATUS'];
-// $_SESSION['GUARDIAN']     =  $_POST['GUARDIAN'];
-// $_SESSION['GCONTACT']     =  $_POST['GCONTACT'];
-// $_SESSION['COURSEID']     =  $_POST['COURSE'];
-// // $_SESSION['SEMESTER']     =  $_POST['SEMESTER'];  
-// $_SESSION['USER_NAME']    =  $_POST['USER_NAME']; 
-// $_SESSION['PASS']       =  $_POST['PASS']; 
-
-
-
-//   $student = New Student();
-//   $res = $student->find_all_student($_POST['LNAME'],$_POST['FNAME'],$_POST['MI']);
-
-// if ($res) {
-//   # code...
-//     message("Student already exist.", "error");
-//     redirect(web_root."index.php?q=enrol");
-
-//  }else{
-
-// $sql="SELECT * FROM tblstudent WHERE ACC_USERNAME='" . $_SESSION['USER_NAME'] . "'";
-// $userresult = mysqli_query($mydb->conn,$sql) or die(mysqli_error($mydb->conn));
-// $userStud  = mysqli_fetch_assoc($userresult);
-
-// if($userStud){
-//   message("Username is already taken.", "error");
-//     redirect(web_root."index.php?q=enrol");
-// }else{
-//   if($_SESSION['COURSEID']=='Select' || $_SESSION['SEMESTER']=='Select' ){
-//     message("Select course and semester exactly" , "error");
-//     redirect("index.php?q=enrol");
-
-//   }else{
+    $_SESSION['STUDID']     =  $_POST['IDNO'];
+    $_SESSION['FNAME']        =  $_POST['FNAME'];
+    $_SESSION['LNAME']      =  $_POST['LNAME'];
+    $_SESSION['MI']           =  $_POST['MI'];
+    $_SESSION['PADDRESS']     =  $_POST['PADDRESS'];
+    $_SESSION['SEX']          =  $_POST['optionsRadios'];
+    $_SESSION['BIRTHDATE']    = date_format(date_create($_POST['BIRTHDATE']),'Y-m-d');
+    $_SESSION['NATIONALITY']  =  $_POST['NATIONALITY'];
+    $_SESSION['BIRTHPLACE']   =  $_POST['BIRTHPLACE'];
+    $_SESSION['RELIGION']     =  $_POST['RELIGION'];
+    $_SESSION['CONTACT']      =  $_POST['CONTACT'];
+    $_SESSION['CIVILSTATUS']  =  $_POST['CIVILSTATUS'];
+    $_SESSION['GUARDIAN']     =  $_POST['GUARDIAN'];
+    $_SESSION['GCONTACT']     =  $_POST['GCONTACT'];
+    $_SESSION['COURSEID']     =  $_POST['COURSE'];
+    $_SESSION['SEMESTER']     =  $_POST['SEMESTER'];
+    $_SESSION['USER_NAME']    =  $_POST['USER_NAME'];
+    $_SESSION['PASS']       =  $_POST['PASS'];
 
 
-//     $age = date_diff(date_create($_SESSION['BIRTHDATE']),date_create('today'))->y;
 
-//     if ($age < 15){
-//        message("Invalid age. 15 years old and above is allowed to enrol.", "error");
-//        redirect("index.php?q=enrol");
+    $student = New Student();
+    $res = $student->find_all_student($_POST['LNAME'],$_POST['FNAME'],$_POST['MI']);
 
-//     }else{
-//       # code...
-   
-//     $student = New Student();
-//     $student->IDNO        = $_SESSION['STUDID'];
-//     $student->FNAME       = $_SESSION['FNAME'];
-//     $student->LNAME       = $_SESSION['LNAME'];
-//     $student->MNAME       = $_SESSION['MI'];
-//     $student->SEX         = $_SESSION['SEX'];
-//     $student->BDAY        = $_SESSION['BIRTHDATE'];
-//     $student->BPLACE      = $_SESSION['BIRTHPLACE'];
-//     $student->STATUS      = $_SESSION['CIVILSTATUS'];
-//     $student->NATIONALITY = $_SESSION['NATIONALITY'];
-//     $student->RELIGION    = $_SESSION['RELIGION'];
-//     $student->CONTACT_NO  = $_SESSION['CONTACT'];
-//     $student->HOME_ADD    = $_SESSION['PADDRESS'];
-//     $student->ACC_USERNAME  = $_SESSION['USER_NAME'];
-//     $student->ACC_PASSWORD  = sha1($_SESSION['PASS']);
-//     $student->COURSE_ID     = $_SESSION['COURSEID'];
-//     $student->SEMESTER      = $_SESSION['SEMESTER']; 
-//     $student->student_status ='New';
-//     $student->YEARLEVEL     = 1; 
-//     $student->NewEnrollees  = 1; 
-//     $student->create();
+    if ($res) {
+        # code...
+        message("Student already exist.", "error");
+        redirect(web_root."index.php?q=enrol");
 
-//     $studentdetails = New StudentDetails();
-//     $studentdetails->IDNO = $_SESSION['STUDID'];
-//     $studentdetails->GUARDIAN = $_SESSION['GUARDIAN'];
-//     $studentdetails->GCONTACT = $_SESSION['GCONTACT']; 
-//     $studentdetails->create(); 
+    }else{
 
-//     $studAuto = New Autonumber();
-//     $studAuto->studauto_update();
+        $sql="SELECT * FROM tblstudent WHERE ACC_USERNAME='" . $_SESSION['USER_NAME'] . "'";
+        $userresult = mysqli_query($mydb->conn,$sql) or die(mysqli_error($mydb->conn));
+        $userStud  = mysqli_fetch_assoc($userresult);
 
-//     @$_SESSION['IDNO'] = $_SESSION['STUDID'];
-//    }
-//     // redirect("index.php?q=profile");
-//   }
-//  }
-// }
-// } 
+        if($userStud){
+            message("Username is already taken.", "error");
+            redirect(web_root."index.php?q=enrol");
+        }else{
+            if($_SESSION['COURSEID']=='Select' || $_SESSION['SEMESTER']=='Select' ){
+                message("Select course and semester exactly" , "error");
+                redirect("index.php?q=enrol");
 
+            }else{
+
+
+                $age = date_diff(date_create($_SESSION['BIRTHDATE']),date_create('today'))->y;
+
+                if ($age < 15){
+                    message("Invalid age. 15 years old and above is allowed to enrol.", "error");
+                    redirect("index.php?q=enrol");
+
+                }else{
+                    # code...
+
+                    $student = New Student();
+                    $student->IDNO        = $_SESSION['STUDID'];
+                    $student->FNAME       = $_SESSION['FNAME'];
+                    $student->LNAME       = $_SESSION['LNAME'];
+                    $student->MNAME       = $_SESSION['MI'];
+                    $student->SEX         = $_SESSION['SEX'];
+                    $student->BDAY        = $_SESSION['BIRTHDATE'];
+                    $student->BPLACE      = $_SESSION['BIRTHPLACE'];
+                    $student->STATUS      = $_SESSION['CIVILSTATUS'];
+                    $student->NATIONALITY = $_SESSION['NATIONALITY'];
+                    $student->RELIGION    = $_SESSION['RELIGION'];
+                    $student->CONTACT_NO  = $_SESSION['CONTACT'];
+                    $student->HOME_ADD    = $_SESSION['PADDRESS'];
+                    $student->ACC_USERNAME  = $_SESSION['USER_NAME'];
+                    $student->ACC_PASSWORD  = sha1($_SESSION['PASS']);
+                    $student->COURSE_ID     = $_SESSION['COURSEID'];
+                    $student->SEMESTER      = $_SESSION['SEMESTER'];
+                    $student->student_status ='New';
+                    $student->YEARLEVEL     = 1;
+                    $student->NewEnrollees  = 1;
+                    $student->create();
+
+                    $studentdetails = New StudentDetails();
+                    $studentdetails->IDNO = $_SESSION['STUDID'];
+                    $studentdetails->GUARDIAN = $_SESSION['GUARDIAN'];
+                    $studentdetails->GCONTACT = $_SESSION['GCONTACT'];
+                    $studentdetails->create();
+
+                    $studAuto = New Autonumber();
+                    $studAuto->studauto_update();
+
+                    @$_SESSION['IDNO'] = $_SESSION['STUDID'];
+                }
+                redirect("index.php?q=profile");
+            }
+        }
+    }
+}
 
 ?>
 <form action="index.php?q=payment" method="POST">
@@ -303,24 +302,27 @@ $totunit =0;
               } 
 
       }else{
-          $totunit = '';
+          $totunit = 0; // Initialize $totunit as numeric value
+
           $mydb->setQuery("SELECT * FROM `subject` s, `course` c 
-          WHERE s.COURSE_ID=c.COURSE_ID AND CONCAT(`COURSE_NAME` ,  '-',  `COURSE_LEVEL` ) ='".$_SESSION['COURSE_YEAR']."' AND SEMESTER='".$_SESSION['SEMESTER']."'");
+                WHERE s.COURSE_ID=c.COURSE_ID 
+                AND CONCAT(`COURSE_NAME`, '-', `COURSE_LEVEL`) = '".$_SESSION['COURSE_YEAR']."' 
+                AND SEMESTER = '".$_SESSION['SEMESTER']."'");
 
           $cur = $mydb->loadResultList();
 
           foreach ($cur as $result) {
-          echo '<tr>';
-          echo '<td>'.$result->SUBJ_ID.'</td>';
-          echo '<td>'.$result->SUBJ_CODE.'</td>'; 
-          echo '<td>'.$result->SUBJ_DESCRIPTION.'</td>';
-          echo '<td>'.$result->UNIT.'</td>';
-          echo '</tr>';
+              echo '<tr>';
+              echo '<td>'.$result->SUBJ_ID.'</td>';
+              echo '<td>'.$result->SUBJ_CODE.'</td>';
+              echo '<td>'.$result->SUBJ_DESCRIPTION.'</td>';
+              echo '<td>'.$result->UNIT.'</td>';
+              echo '</tr>';
 
-          $totunit +=  $result->UNIT;
+              $totunit += $result->UNIT; //
           }
       }
-      
+
           ?>
            <tr>
             <td colspan="3" align="right" >Total Units</td>

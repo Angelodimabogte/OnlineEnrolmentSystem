@@ -11,7 +11,11 @@
             <h1 class="page-header">New Enrollees</h1>
        		</div>
        		<div class="col-lg-6" >
+<<<<<<< Updated upstream
        			<img style="float:right;" src="<?php echo web_root; ?>img/aclciriga.jpg" >
+=======
+       			<img style="float:right; height: 70px;" src="<?php echo web_root; ?>img/aclclogo.jpg" >
+>>>>>>> Stashed changes
        		</div>
        		</div>
         	<!-- /.col-lg-12 -->

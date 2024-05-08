@@ -9,7 +9,11 @@
            <a class="google-map-code" href="http://www.map-embed.com" id="get-map-data">embed google map</a>
            </div>
            <script type="text/javascript">
+<<<<<<< Updated upstream
             function init_map(){var myOptions = {zoom:19,center:new google.maps.LatLng(6.491144065749442,124.85594889087679),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(6.491144065749442, 124.85594889087679)});infowindow = new google.maps.InfoWindow({content:"<b>ACLC College of Iriga City, Inc.</b><br/>Km. 2, Bo. 2, General Santos Drive<br/>9506  Philippines" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+=======
+            function init_map(){var myOptions = {zoom:19,center:new google.maps.LatLng(13.421336994102615,123.40858899359932),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(13.421336994102615, 123.40858899359932)});infowindow = new google.maps.InfoWindow({content:"<b>Aclc College Of Iriga, Inc.</b><br/>2nd Floor, Jasaca Building San Miguel Iriga City<br/>9506  Philippines" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+>>>>>>> Stashed changes
 </div>
             </div>
             <!-- Contact Details Column -->

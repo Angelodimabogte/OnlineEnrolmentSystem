@@ -11,8 +11,12 @@
             <h2 class="page-header">List of Subjects per Course/Year <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> New</a>  </h2>
        		</div>
        		<div class="col-lg-4" >
+<<<<<<< Updated upstream
        			<img style="float:right;" src="<?php echo web_root; ?>img/aclciriga.jpg" >
        		</div>
+=======
+				<img style="float:right; height: 70px;" src="<?php echo web_root; ?>img/aclclogo.jpg" >       		</div>
+>>>>>>> Stashed changes
        		</div>
         	<!-- /.col-lg-12 -->
    		 </div>

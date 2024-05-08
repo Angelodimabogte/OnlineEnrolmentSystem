@@ -11,8 +11,12 @@
             <h1 class="page-header">List of Students </h1>
        		</div>
        		<div class="col-lg-6" >
+<<<<<<< Updated upstream
        			<img style="float:right;" src="<?php echo web_root; ?>img/aclciriga.jpg" >
        		</div>
+=======
+				<img style="float:right; height: 70px;" src="<?php echo web_root; ?>img/aclclogo.jpg" >       		</div>
+>>>>>>> Stashed changes
        		</div>
         	<!-- /.col-lg-12 -->
    		 </div>

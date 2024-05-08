@@ -163,9 +163,7 @@ body {
     color: #428bca;
 }
 
-.btn-success.btn-outline {
-    color: #5cb85c;
-}
+
 
 .btn-info.btn-outline {
     color: #5bc0de;
@@ -311,21 +309,21 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-green {
-    border-color: #5cb85c;
+    border-color: rgb(3, 38, 224);
 }
 
 .panel-green .panel-heading {
-    border-color: #5cb85c;
+    border-color: rgb(3, 38, 224);
     color: #fff;
-    background-color: #5cb85c;
+    background-color: rgb(3, 38, 224);
 }
 
 .panel-green a {
-    color: #5cb85c;
+    color: rgb(3, 38, 224);
 }
 
 .panel-green a:hover {
-    color: #3d8b3d;
+    color: rgb(3, 38, 224);
 }
 
 .panel-red {
